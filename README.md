@@ -13,7 +13,7 @@
 
 ---
 
-<p align="center"> Records something about frontend develop !
+<p align="center"> Records something about frontend development !
     <br> 
 </p>
 
