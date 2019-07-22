@@ -1,17 +1,21 @@
 ---
 path: "/post/javascript-generate-your-code-snippet"
-date: "2019-06-07"
+date: "2019-06-07T09:00:00+08:00"
 title: "JavaScript 產生你的程式碼片段"
+tags: ["Code Snippet", "JavaScript", "Nodejs", "Leetcode", "Front End Development"]
 ---
 # JavaScript 產生你的程式碼片段
 
-Photo by Karsten Würth (@karsten.wuerth) on Unsplash
+<figure>
+  <img src="https://images.unsplash.com/photo-1466629437334-b4f6603563c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2857&q=80" alt="Post Image"/>
+  <figcaption>Photo by Karsten Würth (@karsten.wuerth) on Unsplash</figcaption>
+</figure>
 
 ## **事情是這樣子的 **🧐
 
 最近試著用 [JavaScript 寫 LeetCode](https://github.com/sky172839465/leetcode-in-js) ，每解開一個問題預計會產出題目的解答、解答的測試案例、解答的筆記並且將這些檔案的連結寫入專案的描述裡，一共 **1** 個資料夾加上 **5** 個檔案，如下圖所示：
 
-<iframe src="https://medium.com/media/b61f1d87bed1d51ec74dc9c55980b4d1" frameborder=0></iframe>
+https://gist.github.com/sky172839465/bc32f877a951152118fd63f936a1d4a4
 
 1. [src/easy/0001-two-sum/index.js](https://github.com/sky172839465/leetcode-in-js/blob/demo/src/easy/0001-two-sum/index.js) 題目的解答
 
@@ -41,7 +45,7 @@ Photo by Karsten Würth (@karsten.wuerth) on Unsplash
 
 首先試著產生一個 hello world 的文字檔
 
-<iframe src="https://medium.com/media/9e1bc1bf79a5464b6abd0bd9621d915a" frameborder=0></iframe>
+https://gist.github.com/sky172839465/abb6bca50b21c7cef3170e80042c74a9
 
 ![產生 hello world](https://cdn-images-1.medium.com/max/2400/1*V88sV8GEPA6eiXSg9P3_Lw.gif)*產生 hello world*
 
@@ -49,7 +53,7 @@ Photo by Karsten Würth (@karsten.wuerth) on Unsplash
 
 markdown 的表格欄位如果變多了寫起來很容易少寫或多寫，所以能透過程式自動產生是最理想的 😍
 
-<iframe src="https://medium.com/media/79ae75e6b409c5693f4d4dd4e644bde3" frameborder=0></iframe>
+https://gist.github.com/sky172839465/b3f761ac2a9e87a519f112955c1bd6ff
 
 ![產生九九乘法表](https://cdn-images-1.medium.com/max/2400/1*S60hGT8tPP85etefvxtLAQ.gif)*產生九九乘法表*
 
@@ -61,7 +65,7 @@ markdown 的表格欄位如果變多了寫起來很容易少寫或多寫，所�
 
 1. JavaScript only !
 
-<iframe src="https://medium.com/media/493582d063db544a78d7d7f4f5a7a925" frameborder=0></iframe>
+https://gist.github.com/sky172839465/a4b16de76f83b3338b7411df70130f87
 
 * [colors](https://github.com/Marak/colors.js)：讓執行過程中印在終端機上的 console.log 加上不同色彩
 
@@ -73,7 +77,9 @@ markdown 的表格欄位如果變多了寫起來很容易少寫或多寫，所�
 
 現在來看看，能自動產生程式碼片段後，寫 LeetCode 前要準備好那些檔案變得多麽的輕鬆 🎉
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/j5XeZQNUx2E" frameborder="0" allowfullscreen></iframe></center>
+<center>
+  <iframe class="iframe" src="https://www.youtube.com/embed/j5XeZQNUx2E" allowfullscreen></iframe>
+</center>
 
 加入[提問](https://github.com/SBoudrias/Inquirer.js)來決定產生的內容，有 **3** 個原因：
 
