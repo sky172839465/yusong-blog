@@ -1,7 +1,7 @@
 {
   "name": "yusong-blog",
   "private": true,
-  "description": "Records something about frontend develop !",
+  "description": "Records something about frontend development !",
   "version": "0.1.0",
   "author": "YuSong Hsu <sky172839465@gmail.com>",
   "dependencies": {
@@ -23,7 +23,9 @@
   "devDependencies": {
     "babel-eslint": "^10.0.2",
     "colors": "^1.3.3",
+    "env-cmd": "^9.0.3",
     "husky": "^3.0.1",
+    "node-fetch": "^2.6.0",
     "prettier": "^1.18.2",
     "snazzy": "^8.0.0",
     "standard": "^13.0.2"
@@ -35,14 +37,15 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "env-cmd -f .env.development gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "lint": "standard | snazzy",
     "lintfix": "standard --fix",
-    "g-post": "node generator/frontmatter-md"
+    "mdPage": "node generator/frontmatter-md",
+    "mediumDraft": "node generator/medium-draft"
   },
   "repository": {
     "type": "git",
