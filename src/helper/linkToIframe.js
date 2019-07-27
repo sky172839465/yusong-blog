@@ -13,7 +13,6 @@ const linkToIframe = html => {
       `
     }
   )
-  console.log(convertedHtml)
   return convertedHtml
 }
 
