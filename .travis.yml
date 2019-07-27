@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - stable
+cache:
+  directories:
+    - node_modules
+install:
+  - npm install
+  - npm install netlify-cli
+script:
+  - npm run ci-lint
+  - npm run build
+  - npm run deploy
+true:
+  branch: master
