@@ -7,9 +7,12 @@
 
 <div align="center">
 
-  [![Netlify Status](https://api.netlify.com/api/v1/badges/e2175574-9a9f-4e97-a09f-f9cd0d9d2bd7/deploy-status)](https://app.netlify.com/sites/yusong-blog/deploys)
+  [![Netlify Status][NetlifyBadge]][NetlifyDeployLink]
 
 </div>
+
+[NetlifyBadge]: https://api.netlify.com/api/v1/badges/60b3ae1e-8068-4a92-acdd-8a048816c900/deploy-status
+[NetlifyDeployLink]: https://app.netlify.com/sites/yusong-blog/deploys
 
 ---
 
