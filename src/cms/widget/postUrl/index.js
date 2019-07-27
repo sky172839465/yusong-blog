@@ -16,9 +16,6 @@ class Control extends React.Component {
   constructor () {
     super()
     this.timer = null
-    this.state = {
-      value: ''
-    }
   }
 
   componentDidMount () {
@@ -31,7 +28,8 @@ class Control extends React.Component {
     const selector = this.props.field.get('selector')
     const prefix = this.props.field.get('prefix')
     const ele = document.querySelector(selector)
-    this.setState({ value: `${prefix}${_.kebabCase(ele.value)}` })
+    const currentPath = ele.value ? _.kebabCase(ele.value) : ''
+    this.props.onChange(`${prefix}${currentPath}`)
   }
 
   componentDidUnmount () {
@@ -41,9 +39,9 @@ class Control extends React.Component {
   render () {
     const {
       forID,
-      classNameWrapper
+      classNameWrapper,
+      value
     } = this.props
-    const { value } = this.state
 
     return (
       <input
