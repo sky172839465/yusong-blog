@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import _ from 'lodash'
 
 class Control extends React.Component {
   static propTypes = {
@@ -30,7 +31,7 @@ class Control extends React.Component {
     const selector = this.props.field.get('selector')
     const prefix = this.props.field.get('prefix')
     const ele = document.querySelector(selector)
-    this.setState({ value: `${prefix}${ele.value}` })
+    this.setState({ value: `${prefix}${_.kebabCase(ele.value)}` })
   }
 
   componentDidUnmount () {
