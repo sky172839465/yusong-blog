@@ -7,12 +7,15 @@
 
 <div align="center">
 
-  [![Netlify Status][NetlifyBadge]][NetlifyDeployLink]
+  [![Netlify Status][netlify-image]][netlify-url]
+  [![Build Status][travis-image]][travis-url]
 
 </div>
 
-[NetlifyBadge]: https://api.netlify.com/api/v1/badges/60b3ae1e-8068-4a92-acdd-8a048816c900/deploy-status
-[NetlifyDeployLink]: https://app.netlify.com/sites/yusong-blog/deploys
+[netlify-image]: https://api.netlify.com/api/v1/badges/60b3ae1e-8068-4a92-acdd-8a048816c900/deploy-status
+[netlify-url]: https://app.netlify.com/sites/yusong-blog/deploys
+[travis-image]: https://img.shields.io/travis/sky172839465/yusong-blog.svg?branch=master
+[travis-url]: https://travis-ci.org/sky172839465/yusong-blog
 
 ---
 
