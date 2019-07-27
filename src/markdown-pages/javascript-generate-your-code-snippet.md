@@ -1,7 +1,6 @@
 ---
-path: "/post/javascript-generate-your-code-snippet"
-date: "2019-06-07T09:00:00+08:00"
 title: "JavaScript generate your code snippet"
+date: "2019-06-07T09:00:00+08:00"
 description: "透過 JavaScript 產生程式碼片段後，可以有效提升作業的效率與降低出錯的機率 🤖"
 tags: ["Code Snippet", "JavaScript", "Nodejs", "Leetcode", "Front End Development"]
 ---
