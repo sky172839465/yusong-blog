@@ -42,17 +42,17 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "env-cmd -f .env.development gatsby develop",
-    "deploy": "netlify deploy",
+    "deploy": "netlify deploy --dir=public",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "lint": "standard | snazzy",
     "lintfix": "standard --fix",
-    "mdPage": "node generator/frontmatter-md",
-    "mediumDraft": "node generator/medium-draft",
-    "ci-lint": "if npm run lint; then echo '💯 Lint perfect'; else echo '⁉️ Lint get error please run `npm run lint` check again';exit 1; fi",
-    "ci-deploy": "if npm run deploy --prod --message 'Deploy website by CI 🤖'; then echo '💯 Lint perfect'; else echo '⁉️ Lint get error please run `npm run lint` check again';exit 1; fi"
+    "mdPage": "node script/mdPage",
+    "mediumDraft": "node script/mediumDraft",
+    "ci-lint": "node script/ci/lint",
+    "ci-deploy": "node script/ci/deploy"
   },
   "repository": {
     "type": "git",

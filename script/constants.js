@@ -10,7 +10,8 @@ const PREFIX = {
   UNEXPECT_ERROR: 'UNEXPECT ERROR',
   SOLVED: 'SOLVED',
   GIT: 'GIT',
-  QUALITY: 'QUALITY'
+  QUALITY: 'QUALITY',
+  EXECUTE: 'EXECUTE'
 }
 
 module.exports = {
