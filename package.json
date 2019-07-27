@@ -42,7 +42,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "env-cmd -f .env.development gatsby develop",
-    "deploy": "netlify deploy --dir=public",
+    "deploy": "netlify deploy",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -56,10 +56,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/sky172839465/yusong-blog"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/sky172839465/yusong-blog/issues"
   },
   "standard": {
     "env": {

@@ -6,10 +6,8 @@ cache:
     - node_modules
 install:
   - npm install
-  - npm install netlify-cli
 script:
   - npm run ci-lint
-  - npm run build
-  - npm run deploy
+  - npm run ci-deploy
 true:
   branch: master
