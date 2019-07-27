@@ -1,4 +1,5 @@
 const path = require(`path`)
+const _ = require('lodash')
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -15,6 +16,7 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             frontmatter {
               path
+              title
             }
           }
         }
@@ -26,8 +28,9 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      const { path, title } = node.frontmatter
       createPage({
-        path: node.frontmatter.path,
+        path: path || `/path/${_.kebabCase(title)}`,
         component: blogPostTemplate,
         context: {} // additional data can be passed via context
       })
