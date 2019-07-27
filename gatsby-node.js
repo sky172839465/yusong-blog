@@ -15,7 +15,6 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             frontmatter {
-              path
               title
             }
           }
@@ -28,9 +27,9 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      const { path, title } = node.frontmatter
+      const { title } = node.frontmatter
       createPage({
-        path: path || `/path/${_.kebabCase(title)}`,
+        path: `/path/${_.kebabCase(title)}`,
         component: blogPostTemplate,
         context: {} // additional data can be passed via context
       })
