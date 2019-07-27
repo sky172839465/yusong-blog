@@ -11,7 +11,6 @@ const Template = (props) => {
     title,
     description
   } = frontmatter
-  console.log(props.data)
   return (
     <>
       <SEO
