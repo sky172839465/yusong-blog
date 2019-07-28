@@ -3,7 +3,6 @@ import _ from 'lodash'
 import { Link } from 'gatsby'
 import clx from 'classnames'
 import styled from 'styled-components'
-import '../styles/bulma/index.scss'
 import Image from './image'
 import Icon from './icon'
 import {
