@@ -16,6 +16,7 @@ const Template = (props) => {
       <SEO
         title={title}
         description={description}
+        path={props.path}
       />
       <div className='blog-post-container'>
         <div className='blog-post'>
