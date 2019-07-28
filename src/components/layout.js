@@ -12,6 +12,7 @@ import styled from 'styled-components'
 // import Header from './header'
 import Navbar from './navbar'
 import Footer from './footer'
+import '../styles/bulma/index.scss'
 import './layout.css'
 
 const Main = styled.main`
@@ -19,7 +20,8 @@ const Main = styled.main`
   min-height: calc(100vh - 7rem);
 `
 
-const Layout = ({ children, path }) => {
+const Layout = props => {
+  const { path, children } = props
   return (
     <>
       <Navbar path={path} />

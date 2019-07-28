@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import SEO from '../components/seo'
 
-const Setting = props => (
+const SettingPage = props => (
   <>
     <SEO
       title='Setting'
@@ -15,4 +15,4 @@ const Setting = props => (
   </>
 )
 
-export default Setting
+export default SettingPage
