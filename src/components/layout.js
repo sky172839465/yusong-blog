@@ -7,25 +7,22 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
+import styled from 'styled-components'
 
-import Header from './header'
+// import Header from './header'
+import Navbar from './navbar'
+import Footer from './footer'
 import './layout.css'
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Main = styled.main`
+  margin-top: 5rem;
+  min-height: calc(100vh - 7rem);
+`
 
+const Layout = ({ children, path }) => {
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Navbar path={path} />
       <div
         style={{
           margin: `0 auto`,
@@ -34,11 +31,8 @@ const Layout = ({ children }) => {
           paddingTop: 0
         }}
       >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}
-          {` YuSong Hsu`}
-        </footer>
+        <Main>{children}</Main>
+        <Footer />
       </div>
     </>
   )
