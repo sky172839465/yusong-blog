@@ -13,7 +13,8 @@ import {
 
 const BrandArea = styled.div`
   float: left;
-  width: 12rem;
+  width: 7rem;
+  margin: auto 1rem;
 `
 const NavMenuArea = styled.div.attrs(props => ({
   className: clx(
@@ -51,8 +52,8 @@ const Navbar = props => {
           <Link to='/'>
             <Image
               className='image'
-              imgName='publication-logo.png'
-              alt='publication logo'
+              imgName='yusong.io.logo.png'
+              alt='Yusong IO LOGO'
             />
           </Link>
         </BrandArea>

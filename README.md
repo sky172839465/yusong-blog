@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://yusong.io" rel="noopener">
- <img width=200px height=200px src="https://user-images.githubusercontent.com/9082423/61587193-e2908e00-abb7-11e9-86cc-602d662511b9.png" alt="Yusong Blog logo"></a>
+ <img width=200px height=200px src="https://user-images.githubusercontent.com/9082423/62056756-e162ff00-b250-11e9-974f-44fe33657ded.png" alt="Yusong IO logo"></a>
 </p>
 
-<!-- <h3 align="center">Yusong Blog</h3> -->
+<h3 align="center">Yusong.io</h3>
 
 <div align="center">
 
@@ -13,9 +13,9 @@
 </div>
 
 [netlify-image]: https://api.netlify.com/api/v1/badges/60b3ae1e-8068-4a92-acdd-8a048816c900/deploy-status
-[netlify-url]: https://app.netlify.com/sites/yusong-blog/deploys
-[travis-image]: https://img.shields.io/travis/sky172839465/yusong-blog.svg?branch=master
-[travis-url]: https://travis-ci.org/sky172839465/yusong-blog
+[netlify-url]: https://app.netlify.com/sites/yusong.io/deploys
+[travis-image]: https://img.shields.io/travis/sky172839465/yusong.io.svg?branch=master
+[travis-url]: https://travis-ci.org/sky172839465/yusong.io
 
 ---
 

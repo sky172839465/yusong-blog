@@ -1,5 +1,5 @@
 {
-  "name": "yusong-blog",
+  "name": "yusong.io",
   "private": true,
   "description": "Records something about frontend development !",
   "version": "0.1.0",
@@ -44,7 +44,7 @@
     "standard": "^13.0.2"
   },
   "keywords": [
-    "yusong-blog",
+    "yusong.io",
     "frontend"
   ],
   "license": "MIT",
@@ -65,10 +65,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sky172839465/yusong-blog"
+    "url": "https://github.com/sky172839465/yusong.io"
   },
   "bugs": {
-    "url": "https://github.com/sky172839465/yusong-blog/issues"
+    "url": "https://github.com/sky172839465/yusong.io/issues"
   },
   "standard": {
     "env": {

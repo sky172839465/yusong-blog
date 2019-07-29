@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Yusong Blog`,
+    title: `Yusong IO`,
     description: `Records something about frontend development !`,
     author: `Yusong Hsu`
   },
@@ -8,13 +8,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Yusong Blog`,
+        name: `Yusong IO`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/yusongblog-icon.png` // This path is relative to the root of the site.
+        icon: `src/images/yusong.io.favicon.png` // This path is relative to the root of the site.
       }
     },
     `gatsby-plugin-react-helmet`,
