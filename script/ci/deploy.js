@@ -10,7 +10,7 @@ const {
 const deploy = async () => {
   const scripts = [
     'npm run build',
-    'npm run deploy -- --prod --message "Deploy website by CI 🤖"'
+    'npm run deploy -- --prod --message "Deploy website by TravisCI 🤖"'
   ]
   for (const script of scripts) {
     await printExecuteScript(script)

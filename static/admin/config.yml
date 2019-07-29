@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: master
   squash_merges: true
-    commit_messages:
+  commit_messages:
     create: "feat: create {{collection}} '{{slug}}' by NetlifyCMS 🤖"
     update: "feat: update {{collection}} '{{slug}}' by NetlifyCMS 🤖"
     delete: "feat: delete {{collection}} '{{slug}}' by NetlifyCMS 🤖"
@@ -19,7 +19,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Post URL", name: "path", widget: "postUrl", prefix: "/blog/", selector: "[id^='title']"}
+      - {label: "Post URL", name: "path", widget: "postUrl", prefix: "/blog/post/", selector: "[id^='title']"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
