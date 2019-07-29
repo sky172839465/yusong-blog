@@ -74,7 +74,7 @@ const SEO = ({ description, lang, meta, title, author, path }) => {
     // url
     {
       name: `og:url`,
-      content: `https://yusong.blog${path}`
+      content: `https://yusong.io${path}`
     }
   ]
 
