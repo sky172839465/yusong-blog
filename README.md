@@ -3,7 +3,9 @@
  <img width=200px height=200px src="https://user-images.githubusercontent.com/9082423/62130266-3b27ff80-b30b-11e9-9a7c-b7582dcf6d0f.png" alt="Yusong IO logo"></a>
 </p>
 
-<h3 align="center">YUSONG.IO</h3>
+<h3 align="center">
+  <a href="https://yusong.io">YUSONG.IO</a>
+</h3>
 
 <div align="center">
 
