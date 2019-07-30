@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://yusong.io" rel="noopener">
- <img width=200px height=200px src="https://user-images.githubusercontent.com/9082423/62092555-2fefb800-b2a8-11e9-9af7-fef9d341e222.png" alt="Yusong IO logo"></a>
+ <img width=200px height=200px src="https://user-images.githubusercontent.com/9082423/62130266-3b27ff80-b30b-11e9-9a7c-b7582dcf6d0f.png" alt="Yusong IO logo"></a>
 </p>
 
 <h3 align="center">YUSONG.IO</h3>
