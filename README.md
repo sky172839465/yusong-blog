@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://yusong.io" rel="noopener">
- <img width=200px height=200px src="https://user-images.githubusercontent.com/9082423/62056756-e162ff00-b250-11e9-974f-44fe33657ded.png" alt="Yusong IO logo"></a>
+ <img width=200px height=200px src="https://user-images.githubusercontent.com/9082423/62092555-2fefb800-b2a8-11e9-9af7-fef9d341e222.png" alt="Yusong IO logo"></a>
 </p>
 
-<h3 align="center">Yusong.io</h3>
+<h3 align="center">YUSONG.IO</h3>
 
 <div align="center">
 
