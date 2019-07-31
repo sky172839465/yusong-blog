@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -10,9 +11,10 @@ const postCard = ({ frontmatter }) => {
     path,
     featuredimage
   } = frontmatter
+  const fluid = _.get(featuredimage, 'childImageSharp.fluid', {})
   return (
     <div className='card'>
-      <Img fluid={featuredimage.childImageSharp.fluid} />
+      {fluid && <Img fluid={fluid} />}
       <div className='card-content'>
         <div className='media-content'>
           <p className='title is-4 has-text-dark'>{title}</p>
@@ -29,6 +31,10 @@ const postCard = ({ frontmatter }) => {
       </footer>
     </div>
   )
+}
+
+postCard.defaultProps = {
+  frontmatter: {}
 }
 
 export default postCard
