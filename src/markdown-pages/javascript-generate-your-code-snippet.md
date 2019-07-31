@@ -1,22 +1,16 @@
 ---
-path: /blog/post/javascript-generate-your-code-snippet
-date: 2019-06-07T09:00:00+08:00
+path: /blog/post/java-script-generate-your-code-snippet
 title: JavaScript generate your code snippet
-description: 透過 JavaScript 產生程式碼片段後，可以有效提升作業的效率與降低出錯的機率 🤖
-tags: 
+date: 2019-06-07T01:00:00.000Z
+description: "透過 JavaScript 產生程式碼片段後，可以有效提升作業的效率與降低出錯的機率 \U0001F916"
+featuredimage: /img/javascript-generate-your-code-snippet.jpeg
+tags:
   - Code Snippet
   - JavaScript
   - Nodejs
   - Leetcode
   - Front End Development
 ---
-# JavaScript 產生你的程式碼片段
-
-<figure>
-  <img src="https://images.unsplash.com/photo-1466629437334-b4f6603563c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2857&q=80" alt="Post Image"/>
-  <figcaption>Photo by Karsten Würth (@karsten.wuerth) on Unsplash</figcaption>
-</figure>
-
 ## **事情是這樣子的 **🧐
 
 最近試著用 [JavaScript 寫 LeetCode](https://github.com/sky172839465/leetcode-in-js) ，每解開一個問題預計會產出題目的解答、解答的測試案例、解答的筆記並且將這些檔案的連結寫入專案的描述裡，一共 **1** 個資料夾加上 **5** 個檔案，如下圖所示：
