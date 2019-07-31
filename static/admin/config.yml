@@ -19,7 +19,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"},
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Post URL", name: "path", widget: "postUrl", prefix: "/blog/post/", selector: "[id^='title']"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
