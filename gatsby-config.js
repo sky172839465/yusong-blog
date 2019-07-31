@@ -1,3 +1,10 @@
+const netlifyCmsPaths = {
+  resolve: `gatsby-plugin-netlify-cms-paths`,
+  options: {
+    cmsConfig: `/static/admin/config.yml`
+  }
+}
+
 module.exports = {
   siteMetadata: {
     title: `Yusong IO`,
@@ -35,13 +42,29 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static/img/`,
+        name: `media`
+      }
+    },
+    netlifyCmsPaths,
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          netlifyCmsPaths,
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              name: `media`
+            }
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 620
+              maxWidth: 620,
+              backgroundColor: 'transparent'
             }
           }
         ]

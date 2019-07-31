@@ -1,4 +1,5 @@
 ---
+templateKey: blog-post
 path: /blog/post/test-generate-post-path
 title: Test generate post path
 date: 2019-07-27T07:43:22.201Z

@@ -5,9 +5,8 @@ const linkToIframe = html => {
       return `
         <div class="iframe-container">
           <iframe
-            class="iframe"
-            src="data:text/html;charset=utf-8,<body><script
-            src='${match.match(/href="(.*)"/)[1]}.js'></script></body>">
+            src="data:text/html;charset=utf-8,<body><script src='${match.match(/href="(.*)"/)[1]}.js'></script></body>"
+          >
           </iframe>
         </div>
       `
