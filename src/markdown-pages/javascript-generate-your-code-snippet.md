@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-path: /blog/javascript-generate-your-code-snippet
+path: /blog/java-script-generate-your-code-snippet
 title: JavaScript generate your code snippet
 date: 2019-06-07T01:00:00.000Z
 description: "透過 JavaScript 產生程式碼片段後，可以有效提升作業的效率與降低出錯的機率 \U0001F916"
@@ -19,14 +19,10 @@ tags:
 https://gist.github.com/sky172839465/bc32f877a951152118fd63f936a1d4a4
 
 1. [src/easy/0001-two-sum/index.js](https://github.com/sky172839465/leetcode-in-js/blob/demo/src/easy/0001-two-sum/index.js) 題目的解答
-
-1. [src/easy/0001-two-sum/README.md](https://github.com/sky172839465/leetcode-in-js/blob/demo/src/easy/0001-two-sum/README.md) 解答的筆記
-
-1. [src/easy/index.js](https://github.com/sky172839465/leetcode-in-js/blob/demo/src/easy/index.js) 給測試案例使用的解答共同的出口
-
-1. [__tests__/easy/0001-two-sum.test.js](https://github.com/sky172839465/leetcode-in-js/blob/demo/__tests__/easy/0001-two-sum.test.js) 解答的測試案例，確保解答符合需求
-
-1. [README.md](https://github.com/sky172839465/leetcode-in-js/blob/demo/README.md) 專案的描述，當有新解答時描述最底下的表格應跟著新增一筆
+2. [src/easy/0001-two-sum/README.md](https://github.com/sky172839465/leetcode-in-js/blob/demo/src/easy/0001-two-sum/README.md) 解答的筆記
+3. [src/easy/index.js](https://github.com/sky172839465/leetcode-in-js/blob/demo/src/easy/index.js) 給測試案例使用的解答共同的出口
+4. [**tests**/easy/0001-two-sum.test.js](https://github.com/sky172839465/leetcode-in-js/blob/demo/__tests__/easy/0001-two-sum.test.js) 解答的測試案例，確保解答符合需求
+5. [README.md](https://github.com/sky172839465/leetcode-in-js/blob/demo/README.md) 專案的描述，當有新解答時描述最底下的表格應跟著新增一筆
 
 連結上是**每次**要開始新的一題需要先準備好的檔案內容，真的非常枯燥又繁瑣，有時候還會漏了某個檔案，尤其是加入新的專案描述…這時候就會像面對考試時會突然覺得桌面的髒亂到不馬上整理不行，我也突然產生了一股不想辦法解決這些重複性高的工作不行的使命感…
 
@@ -41,14 +37,13 @@ https://gist.github.com/sky172839465/bc32f877a951152118fd63f936a1d4a4
 只要知道底下 **2** 件事即可產生任何客製化的程式碼片段：
 
 1. 要在瀏覽器外執行 JavaScript 可以透過 node index.js 在 NodeJS 上執行
-
-1. 使用 NodeJS 的 [File System API](https://nodejs.org/api/fs.html) 產生檔案
+2. 使用 NodeJS 的 [File System API](https://nodejs.org/api/fs.html) 產生檔案
 
 首先試著產生一個 hello world 的文字檔
 
 https://gist.github.com/sky172839465/abb6bca50b21c7cef3170e80042c74a9
 
-![產生 hello world](https://cdn-images-1.medium.com/max/2400/1*V88sV8GEPA6eiXSg9P3_Lw.gif)*產生 hello world*
+![hellow world](/img/generate-hello-world.gif)
 
 再來把前面提過九九乘法表在 markdown 上實作一次吧！
 
@@ -56,23 +51,20 @@ markdown 的表格欄位如果變多了寫起來很容易少寫或多寫，所�
 
 https://gist.github.com/sky172839465/b3f761ac2a9e87a519f112955c1bd6ff
 
-![產生九九乘法表](https://cdn-images-1.medium.com/max/2400/1*S60hGT8tPP85etefvxtLAQ.gif)*產生九九乘法表*
+![產生九九乘法表](/img/generate-nine-nine-table.gif)
 
 最後加入一些套件，玩點有趣的花式操作 🌈，執行後詢問使用者問題並將回覆結果做成 JavaScript Object 的格式寫入檔案 ans.js
 
 1. npm init 初始化 package.json
-
-1. npm i --save-dev colors inquirer 安裝套件
-
-1. JavaScript only !
+2. npm i --save-dev colors inquirer 安裝套件
+3. JavaScript only !
 
 https://gist.github.com/sky172839465/a4b16de76f83b3338b7411df70130f87
 
 * [colors](https://github.com/Marak/colors.js)：讓執行過程中印在終端機上的 console.log 加上不同色彩
-
 * [Inquirer](https://github.com/SBoudrias/Inquirer.js/)：可以寫入問題讓使用者填寫、選擇答案、驗證回答、修改內容…etc
 
-![將提問的回答寫入檔案並宣告成 JavaScript Object](https://cdn-images-1.medium.com/max/2400/1*jM7ZD1r3ZxAct-d8D_7lRw.gif)*將提問的回答寫入檔案並宣告成 JavaScript Object*
+![將提問的回答寫入檔案並宣告成 JavaScript Object](/img/generate-complex-file.gif)
 
 ## 化繁為簡後 ✨
 
@@ -83,10 +75,8 @@ https://www.youtube.com/embed/j5XeZQNUx2E
 加入[提問](https://github.com/SBoudrias/Inquirer.js)來決定產生的內容，有 **3** 個原因：
 
 1. 驗證資料格式、避免輸入錯誤資訊，結果檔案已經被產生出來
-
-1. 內容太多了，問題的長度如果太長，整行指令看起來很不方便
-
-1. 一段時間沒開發後可能已經不記得參數要放什麼了
+2. 內容太多了，問題的長度如果太長，整行指令看起來很不方便
+3. 一段時間沒開發後可能已經不記得參數要放什麼了
 
 👉 影片中產生檔案的[主程式碼](https://github.com/sky172839465/leetcode-in-js/blob/master/generator/solution/index.js)
 
