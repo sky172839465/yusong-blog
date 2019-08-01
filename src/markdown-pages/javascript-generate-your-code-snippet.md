@@ -12,7 +12,7 @@ tags:
   - Leetcode
   - Front End Development
 ---
-## **事情是這樣子的 **🧐
+## 事情是這樣子的 🧐
 
 最近試著用 [JavaScript 寫 LeetCode](https://github.com/sky172839465/leetcode-in-js) ，每解開一個問題預計會產出題目的解答、解答的測試案例、解答的筆記並且將這些檔案的連結寫入專案的描述裡，一共 **1** 個資料夾加上 **5** 個檔案，如下圖所示：
 
