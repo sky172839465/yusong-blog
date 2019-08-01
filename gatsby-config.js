@@ -66,7 +66,8 @@ module.exports = {
               maxWidth: 620,
               backgroundColor: 'transparent'
             }
-          }
+          },
+          `gatsby-remark-copy-linked-files`
         ]
       }
     },
