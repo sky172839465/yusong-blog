@@ -16,6 +16,9 @@ class Control extends React.Component {
   constructor () {
     super()
     this.timer = null
+    this.state = {
+      prevVal: ''
+    }
   }
 
   componentDidMount () {
@@ -25,11 +28,16 @@ class Control extends React.Component {
   }
 
   onChange = () => {
+    const { prevVal } = this.state
     const selector = this.props.field.get('selector')
     const prefix = this.props.field.get('prefix')
     const ele = document.querySelector(selector)
     const currentPath = ele.value ? _.kebabCase(ele.value) : ''
-    this.props.onChange(`${prefix}${currentPath}`)
+    const newPostUrl = `${prefix}${currentPath}`
+    if (prevVal !== newPostUrl) {
+      this.setState({ prevVal: newPostUrl })
+      this.props.onChange()
+    }
   }
 
   componentDidUnmount () {
