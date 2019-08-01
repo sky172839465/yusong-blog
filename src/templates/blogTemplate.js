@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import linkToIframe from '../helper/linkToIframe'
-import './blogTemplate.css'
+import './blogTemplate.scss'
 
 const Template = (props) => {
   const { markdownRemark } = props.data // data.markdownRemark holds our post data

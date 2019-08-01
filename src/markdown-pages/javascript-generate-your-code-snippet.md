@@ -78,9 +78,7 @@ https://gist.github.com/sky172839465/a4b16de76f83b3338b7411df70130f87
 
 現在來看看，能自動產生程式碼片段後，寫 LeetCode 前要準備好那些檔案變得多麽的輕鬆 🎉
 
-<center>
-  <iframe class="iframe" src="https://www.youtube.com/embed/j5XeZQNUx2E" allowfullscreen></iframe>
-</center>
+https://www.youtube.com/embed/j5XeZQNUx2E
 
 加入[提問](https://github.com/SBoudrias/Inquirer.js)來決定產生的內容，有 **3** 個原因：
 
