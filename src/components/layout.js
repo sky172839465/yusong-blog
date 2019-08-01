@@ -20,6 +20,8 @@ const Main = styled.main`
   min-height: calc(100vh - 9rem);
   max-width: 960px;
   margin: 5rem auto 0;
+  padding: 0 1.0875rem 1.45rem;
+  padding-top: 0;
 `
 
 const Layout = props => {
