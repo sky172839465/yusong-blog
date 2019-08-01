@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Footer = styled.footer.attrs({
   className: 'has-text-centered'
 })`
-  height: 2rem;
+  margin: 1rem auto;
 `
 
 const footer = () => {

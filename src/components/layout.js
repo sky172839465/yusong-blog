@@ -17,7 +17,9 @@ import './layout.css'
 
 const Main = styled.main`
   margin-top: 5rem;
-  min-height: calc(100vh - 7rem);
+  min-height: calc(100vh - 9rem);
+  max-width: 960px;
+  margin: 5rem auto 0;
 `
 
 const Layout = props => {
@@ -25,17 +27,8 @@ const Layout = props => {
   return (
     <>
       <Navbar path={path} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0
-        }}
-      >
-        <Main>{children}</Main>
-        <Footer />
-      </div>
+      <Main>{children}</Main>
+      <Footer />
     </>
   )
 }
