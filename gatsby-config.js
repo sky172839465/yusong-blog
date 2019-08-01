@@ -18,8 +18,8 @@ module.exports = {
         name: `Yusong IO`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#333f4f`,
+        theme_color: `#333f4f`,
         display: `minimal-ui`,
         icon: `src/images/yusong.io.png` // This path is relative to the root of the site.
       }
