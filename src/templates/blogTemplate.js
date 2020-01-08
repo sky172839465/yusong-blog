@@ -31,12 +31,14 @@ const Template = (props) => {
 export default Template
 
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query($category: String!, $title: String!) {
+    markdownRemark(frontmatter: {
+      category: { eq: $category },
+      title: { eq: $title }
+    }) {
       html
       frontmatter {
         date
-        path
         title
         description
       }

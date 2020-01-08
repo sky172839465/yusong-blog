@@ -1,6 +1,5 @@
 ---
-templateKey: blog-post
-path: /blog/test-generate-post-path
+category: blog
 title: Test generate post path
 date: 2019-07-27T07:43:22.201Z
 description: check customize widget active 2

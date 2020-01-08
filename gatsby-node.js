@@ -1,4 +1,5 @@
 const path = require(`path`)
+const _ = require(`lodash`)
 
 exports.onCreateNode = ({ node }) => {
   if (node.internal.type === `MarkdownRemark`) {
@@ -20,7 +21,8 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             frontmatter {
-              path
+              category
+              title
             }
           }
         }
@@ -32,11 +34,26 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: blogPostTemplate,
-        context: {} // additional data can be passed via context
-      })
+      const { frontmatter: { category, title } } = node
+      switch (category) {
+        case 'blog': {
+          const postUrl = _.flow(
+            _.toLower,
+            _.kebabCase
+          )(title)
+          createPage({
+            path: `/${category}/${postUrl}`,
+            component: blogPostTemplate,
+            context: {
+              category,
+              title
+            } // additional data can be passed via context
+          })
+          break
+        }
+        default:
+          break
+      }
     })
   })
 }
