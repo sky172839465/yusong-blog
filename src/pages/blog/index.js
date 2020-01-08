@@ -1,8 +1,8 @@
 import React from 'react'
-import clx from 'classnames'
 import { graphql } from 'gatsby'
+import clx from 'classnames'
 import SEO from '../../components/seo'
-import PostCard from './postCard'
+import PostCard from './PostCard'
 
 const BlogPage = props => {
   const posts = props.data.allMarkdownRemark.edges
@@ -40,8 +40,8 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       filter: {
         frontmatter: {
-          templateKey: {
-            eq: "blog-post"
+          category: {
+            eq: "blog"
           }
         }
       }
@@ -50,8 +50,8 @@ export const pageQuery = graphql`
         node {
           id
           frontmatter {
+            category
             title
-            path
             date(formatString: "YYYY/MM/DD HH:mm:ss")
             description
             tags

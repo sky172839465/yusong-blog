@@ -1,18 +1,62 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import clx from 'classnames'
+import { graphql } from 'gatsby'
 import SEO from '../../components/seo'
+import NoteCard from './NoteCard'
 
-const SettingPage = props => (
-  <>
-    <SEO
-      title='Note'
-      description='Write down something I should remember...'
-      path={props.path}
-    />
-    <h1>Hi from the Setting page</h1>
-    <p>Welcome to Setting</p>
-    <Link to='/'>Go back to the homepage</Link>
-  </>
-)
+const NotePage = props => {
+  const notes = props.data.allMarkdownRemark.edges
+  return (
+    <>
+      <SEO
+        title='Note'
+        description='Write down something I should remember...'
+        path={props.path}
+      />
+      <div className={clx(
+        'columns',
+        'is-full-mobile',
+        'is-half-tablet',
+        'is-one-third-desktop'
+      )}>
+        {
+          notes.map(({ node: { id, frontmatter } }) => {
+            return (
+              <div key={id} className='column'>
+                <NoteCard frontmatter={frontmatter} />
+              </div>
+            )
+          })
+        }
+      </div>
+    </>
+  )
+}
 
-export default SettingPage
+export default NotePage
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(
+      filter: {
+        frontmatter: {
+          category: {
+            eq: "note"
+          }
+        }
+      }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            category
+            title
+            date(formatString: "YYYY/MM/DD HH:mm:ss")
+            tags
+          }
+        }
+      }
+    }
+  }
+`

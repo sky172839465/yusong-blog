@@ -3,14 +3,18 @@ import _ from 'lodash'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-const postCard = ({ frontmatter }) => {
+const PostCard = ({ frontmatter }) => {
   const {
+    category,
     title,
     description,
     date,
-    path,
     featuredimage
   } = frontmatter
+  const postUrl = _.flow(
+    _.toLower,
+    _.kebabCase
+  )(title)
   const fluid = _.get(featuredimage, 'childImageSharp.fluid', {})
   return (
     <div className='card'>
@@ -27,14 +31,19 @@ const postCard = ({ frontmatter }) => {
         </div>
       </div>
       <footer className='card-footer'>
-        <Link className='card-footer-item' to={path}>See full post</Link>
+        <Link
+          className='card-footer-item'
+          to={`/${category}/${postUrl}`}
+        >
+          See full post
+        </Link>
       </footer>
     </div>
   )
 }
 
-postCard.defaultProps = {
+PostCard.defaultProps = {
   frontmatter: {}
 }
 
-export default postCard
+export default PostCard

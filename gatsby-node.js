@@ -36,7 +36,8 @@ exports.createPages = ({ actions, graphql }) => {
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       const { frontmatter: { category, title } } = node
       switch (category) {
-        case 'blog': {
+        case 'blog':
+        case 'note': {
           const postUrl = _.flow(
             _.toLower,
             _.kebabCase
