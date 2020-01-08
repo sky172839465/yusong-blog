@@ -7,7 +7,7 @@ const netlifyCmsPaths = {
 
 module.exports = {
   siteMetadata: {
-    title: `Yusong IO`,
+    title: `YUSONG.IO`,
     description: `Records something about frontend development !`,
     author: `Yusong Hsu`
   },
@@ -15,8 +15,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Yusong IO`,
-        short_name: `starter`,
+        name: `YUSONG.IO`,
+        short_name: `yusong-blog`,
         start_url: `/`,
         background_color: `#333f4f`,
         theme_color: `#333f4f`,
@@ -64,9 +64,31 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 620,
-              backgroundColor: 'transparent'
+              backgroundColor: `transparent`
             }
           },
+          {
+            resolve: `gatsby-remark-embed-gist`,
+            options: {
+              // the github handler whose gists are to be accessed
+              username: `weirdpattern`,
+              includeDefaultCss: true
+            }
+          },
+          {
+            resolve: `@raae/gatsby-remark-oembed`,
+            options: {
+              // usePrefix defaults to false
+              // usePrefix: true is the same as ["oembed"]
+              usePrefix: false,
+              providers: {
+                // Important to exclude providers
+                // that adds js to the page.
+                // If you do not need them.
+              }
+            }
+          },
+          `gatsby-remark-responsive-iframe`,
           `gatsby-remark-copy-linked-files`
         ]
       }

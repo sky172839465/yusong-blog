@@ -1,8 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import SEO from '../components/seo'
-import linkToIframe from '../helper/linkToIframe'
-import './blogTemplate.scss'
 
 const Template = (props) => {
   const { markdownRemark } = props.data // data.markdownRemark holds our post data
@@ -22,7 +20,7 @@ const Template = (props) => {
         <div className='blog-post'>
           <div
             className='blog-post-content'
-            dangerouslySetInnerHTML={{ __html: linkToIframe(html) }}
+            dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
       </div>

@@ -16,7 +16,7 @@ tags:
 
 最近試著用 [JavaScript 寫 LeetCode](https://github.com/sky172839465/leetcode-in-js) ，每解開一個問題預計會產出題目的解答、解答的測試案例、解答的筆記並且將這些檔案的連結寫入專案的描述裡，一共 **1** 個資料夾加上 **5** 個檔案，如下圖所示：
 
-https://gist.github.com/sky172839465/bc32f877a951152118fd63f936a1d4a4
+`gist:sky172839465/bc32f877a951152118fd63f936a1d4a4`
 
 1. [src/easy/0001-two-sum/index.js](https://github.com/sky172839465/leetcode-in-js/blob/demo/src/easy/0001-two-sum/index.js) 題目的解答
 2. [src/easy/0001-two-sum/README.md](https://github.com/sky172839465/leetcode-in-js/blob/demo/src/easy/0001-two-sum/README.md) 解答的筆記
@@ -41,7 +41,7 @@ https://gist.github.com/sky172839465/bc32f877a951152118fd63f936a1d4a4
 
 首先試著產生一個 hello world 的文字檔
 
-https://gist.github.com/sky172839465/abb6bca50b21c7cef3170e80042c74a9
+`gist:sky172839465/abb6bca50b21c7cef3170e80042c74a9`
 
 ![hellow world](/img/generate-hello-world.gif)
 
@@ -49,7 +49,7 @@ https://gist.github.com/sky172839465/abb6bca50b21c7cef3170e80042c74a9
 
 markdown 的表格欄位如果變多了寫起來很容易少寫或多寫，所以能透過程式自動產生是最理想的 😍
 
-https://gist.github.com/sky172839465/b3f761ac2a9e87a519f112955c1bd6ff
+`gist:sky172839465/b3f761ac2a9e87a519f112955c1bd6ff`
 
 ![產生九九乘法表](/img/generate-nine-nine-table.gif)
 
@@ -59,7 +59,7 @@ https://gist.github.com/sky172839465/b3f761ac2a9e87a519f112955c1bd6ff
 2. npm i --save-dev colors inquirer 安裝套件
 3. JavaScript only !
 
-https://gist.github.com/sky172839465/a4b16de76f83b3338b7411df70130f87
+`gist:sky172839465/a4b16de76f83b3338b7411df70130f87`
 
 * [colors](https://github.com/Marak/colors.js)：讓執行過程中印在終端機上的 console.log 加上不同色彩
 * [Inquirer](https://github.com/SBoudrias/Inquirer.js/)：可以寫入問題讓使用者填寫、選擇答案、驗證回答、修改內容…etc
@@ -70,7 +70,7 @@ https://gist.github.com/sky172839465/a4b16de76f83b3338b7411df70130f87
 
 現在來看看，能自動產生程式碼片段後，寫 LeetCode 前要準備好那些檔案變得多麽的輕鬆 🎉
 
-https://www.youtube.com/embed/j5XeZQNUx2E
+https://www.youtube.com/watch?v=j5XeZQNUx2E
 
 加入[提問](https://github.com/SBoudrias/Inquirer.js)來決定產生的內容，有 **3** 個原因：
 

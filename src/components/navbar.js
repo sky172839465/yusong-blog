@@ -3,13 +3,6 @@ import _ from 'lodash'
 import { Link } from 'gatsby'
 import clx from 'classnames'
 import styled from 'styled-components'
-import Image from './image'
-import Icon from './icon'
-import {
-  FaFacebookF,
-  FaMediumM,
-  FaGithubAlt
-} from 'react-icons/fa'
 
 const BrandArea = styled.div`
   float: left;
@@ -32,11 +25,6 @@ const pageList = [
   { name: 'About', path: '/about/' },
   { name: 'Setting', path: '/setting/' }
 ]
-const linkList = [
-  { name: 'Facebook', component: FaFacebookF, href: 'https://www.facebook.com/sky172839465' },
-  { name: 'Medium', component: FaMediumM, href: 'https://medium.com/yusong-blog' },
-  { name: 'GitHub', component: FaGithubAlt, href: 'http://github.com/sky172839465' }
-]
 
 const Navbar = props => {
   const [visible, setVisible] = useState(false)
@@ -50,18 +38,16 @@ const Navbar = props => {
       <div className='navbar-brand'>
         <BrandArea>
           <Link to='/'>
-            <Image
-              className='image'
-              imgName='yusong.io.logo.png'
-              alt='Yusong IO LOGO'
-            />
+            YUSONG.IO
           </Link>
         </BrandArea>
         <span
           role='button'
           className='navbar-burger'
           aria-label='menu'
+          tabIndex={0}
           onClick={() => setVisible(!visible)}
+          onKeyDown={() => setVisible(!visible)}
         >
           <span aria-hidden='true' />
           <span aria-hidden='true' />
@@ -70,7 +56,7 @@ const Navbar = props => {
       </div>
       <NavMenuArea visible={visible}>
         <div className='navbar-start'>
-          {pageList.map(({ name, path }) => {
+          {pageList.map(({ name, path }, index) => {
             return (
               <Link
                 key={path}
@@ -79,19 +65,11 @@ const Navbar = props => {
                   'navbar-item',
                   { 'is-active': _.startsWith(currentPath, path) }
                 )}
+                tabIndex={index}
                 onClick={() => setVisible(!visible)}
               >
                 {name}
               </Link>
-            )
-          })}
-        </div>
-        <div className='navbar-end'>
-          {linkList.map(({ component, href }) => {
-            return (
-              <a key={href} href={href} target='blank' className='navbar-item'>
-                <Icon component={component} alone />
-              </a>
             )
           })}
         </div>
