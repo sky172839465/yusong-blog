@@ -22,8 +22,9 @@ const NavMenuArea = styled.div.attrs(props => ({
 
 const pageList = [
   { name: 'Blog', path: '/blog/' },
-  { name: 'About', path: '/about/' },
-  { name: 'Setting', path: '/setting/' }
+  { name: 'Note', path: '/note/' },
+  { name: 'About', path: '/about/' }
+  // { name: 'Setting', path: '/setting/' }
 ]
 
 const Navbar = props => {
