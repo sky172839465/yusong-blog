@@ -1,19 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Footer = styled.footer.attrs({
+const StyledFooter = styled.footer.attrs({
   className: 'has-text-centered'
 })`
   margin: 1rem auto;
 `
 
-const footer = () => {
+const Footer = () => {
   return (
-    <Footer>
+    <StyledFooter>
       © {new Date().getFullYear()}
       {` YuSong Hsu`}
-    </Footer>
+    </StyledFooter>
   )
 }
 
-export default footer
+export default Footer
