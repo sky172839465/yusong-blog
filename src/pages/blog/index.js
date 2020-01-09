@@ -15,8 +15,8 @@ const BlogPage = props => {
       {
         posts.map(({ node: { id, frontmatter } }) => {
           return (
-            <div className='column'>
-              <PostCard key={id} frontmatter={frontmatter} />
+            <div key={id} className='column'>
+              <PostCard frontmatter={frontmatter} />
             </div>
           )
         })

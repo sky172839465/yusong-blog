@@ -4,6 +4,8 @@ title: JavaScript generate your code snippet
 date: 2019-06-07T01:00:00.000Z
 description: "透過 JavaScript 產生程式碼片段後，可以有效提升作業的效率與降低出錯的機率 \U0001F916"
 featuredimage: /img/javascript-generate-your-code-snippet.jpeg
+hostName: Karsten Würth (@karsten.wuerth)
+hostUrl: https://unsplash.com/@karsten_wuerth
 tags:
   - Code Snippet
   - JavaScript

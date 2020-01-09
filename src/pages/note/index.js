@@ -1,5 +1,4 @@
 import React from 'react'
-import clx from 'classnames'
 import { graphql } from 'gatsby'
 import SEO from '../../components/seo'
 import NoteCard from './noteCard'
@@ -13,22 +12,15 @@ const NotePage = props => {
         description='Write down something I should remember...'
         path={props.path}
       />
-      <div className={clx(
-        'columns',
-        'is-full-mobile',
-        'is-half-tablet',
-        'is-one-third-desktop'
-      )}>
-        {
-          notes.map(({ node: { id, frontmatter } }) => {
-            return (
-              <div key={id} className='column'>
-                <NoteCard frontmatter={frontmatter} />
-              </div>
-            )
-          })
-        }
-      </div>
+      {
+        notes.map(({ node: { id, frontmatter } }) => {
+          return (
+            <div key={id} className='column'>
+              <NoteCard frontmatter={frontmatter} />
+            </div>
+          )
+        })
+      }
     </>
   )
 }
