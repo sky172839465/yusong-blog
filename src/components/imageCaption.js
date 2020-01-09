@@ -6,7 +6,7 @@ const StyledFigcaption = styled.figcaption`
   padding: .2rem 0;
 `
 
-const ImageCaption = ({ hostName, hostUrl, ...props }) => (
+const ImageCaption = ({ imageHostUrl, imageHostName, ...props }) => (
   <StyledFigcaption
     className={clx(
       'has-text-centered',
@@ -15,7 +15,7 @@ const ImageCaption = ({ hostName, hostUrl, ...props }) => (
     )}
     {...props}
   >
-    Photo by <a target='block' href={hostUrl}>{hostName}</a>
+    Photo by <a target='block' href={imageHostUrl}>{imageHostName}</a>
   </StyledFigcaption>
 )
 

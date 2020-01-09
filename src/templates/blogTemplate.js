@@ -1,4 +1,5 @@
 import React from 'react'
+import clx from 'classnames'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import _ from 'lodash'
@@ -13,8 +14,8 @@ const Template = (props) => {
     title,
     description,
     featuredimage,
-    hostName,
-    hostUrl
+    imageHostName,
+    imageHostUrl
   } = frontmatter
   const fluid = _.get(featuredimage, 'childImageSharp.fluid', {})
   return (
@@ -27,12 +28,21 @@ const Template = (props) => {
       {
         fluid && (
           <FullWidthArea>
+            <h1
+              className={clx(
+                'title',
+                'has-text-centered',
+                'has-text-dark'
+              )}
+            >
+              {title}
+            </h1>
             <Img fluid={fluid} />
             {
-              hostName &&
+              imageHostName &&
               <ImageCaption
-                hostName={hostName}
-                hostUrl={hostUrl}
+                imageHostName={imageHostName}
+                imageHostUrl={imageHostUrl}
               />
             }
             <br />
@@ -57,8 +67,8 @@ export const pageQuery = graphql`
         date,
         title,
         description,
-        hostName,
-        hostUrl,
+        imageHostName,
+        imageHostUrl,
         featuredimage {
           childImageSharp {
             fluid(maxWidth: 700, maxHeight: 300) {
