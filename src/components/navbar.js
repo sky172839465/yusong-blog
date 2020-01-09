@@ -38,7 +38,7 @@ const Navbar = props => {
     >
       <div className='navbar-brand'>
         <BrandArea>
-          <Link to='/'>
+          <Link className='button is-dark' to='/'>
             YUSONG.IO
           </Link>
         </BrandArea>

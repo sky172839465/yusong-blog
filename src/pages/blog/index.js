@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import clx from 'classnames'
 import SEO from '../../components/seo'
 import PostCard from './PostCard'
 
@@ -13,22 +12,15 @@ const BlogPage = props => {
         description='Records about frontend development post !'
         path={props.path}
       />
-      <div className={clx(
-        'columns',
-        'is-full-mobile',
-        'is-half-tablet',
-        'is-one-third-desktop'
-      )}>
-        {
-          posts.map(({ node: { id, frontmatter } }) => {
-            return (
-              <div key={id} className='column'>
-                <PostCard frontmatter={frontmatter} />
-              </div>
-            )
-          })
-        }
-      </div>
+      {
+        posts.map(({ node: { id, frontmatter } }) => {
+          return (
+            <div className='column'>
+              <PostCard key={id} frontmatter={frontmatter} />
+            </div>
+          )
+        })
+      }
     </>
   )
 }

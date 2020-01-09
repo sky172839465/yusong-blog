@@ -1,5 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import _ from 'lodash'
 import SEO from '../components/seo'
 
 const Template = (props) => {
@@ -7,8 +9,10 @@ const Template = (props) => {
   const { frontmatter, html } = markdownRemark
   const {
     title,
-    description
+    description,
+    featuredimage
   } = frontmatter
+  const fluid = _.get(featuredimage, 'childImageSharp.fluid', {})
   return (
     <>
       <SEO
@@ -16,14 +20,15 @@ const Template = (props) => {
         description={description}
         path={props.path}
       />
-      <div className='blog-post-container'>
-        <div className='blog-post'>
-          <div
-            className='blog-post-content'
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        </div>
-      </div>
+      {
+        fluid && (
+          <>
+            <Img fluid={fluid} />
+            <br />
+          </>
+        )
+      }
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </>
   )
 }
@@ -40,7 +45,14 @@ export const pageQuery = graphql`
       frontmatter {
         date
         title
-        description
+        description,
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 700, maxHeight: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
