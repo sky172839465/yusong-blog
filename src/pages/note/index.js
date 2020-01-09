@@ -2,7 +2,7 @@ import React from 'react'
 import clx from 'classnames'
 import { graphql } from 'gatsby'
 import SEO from '../../components/seo'
-import NoteCard from './NoteCard'
+import NoteCard from './noteCard'
 
 const NotePage = props => {
   const notes = props.data.allMarkdownRemark.edges

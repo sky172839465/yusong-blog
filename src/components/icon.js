@@ -17,7 +17,7 @@ const PaddingArea = styled.div.attrs({
   ${props => props.alone ? '' : `padding-${reversePosition(props.pos)}: .1rem;`}
 `
 
-const icon = props => {
+const Icon = props => {
   const {
     color,
     size,
@@ -41,7 +41,7 @@ const icon = props => {
   )
 }
 
-icon.defaultProps = {
+Icon.defaultProps = {
   color: 'purple',
   size: '1.2rem',
   verticalAlign: 'middle',
@@ -49,4 +49,4 @@ icon.defaultProps = {
   alone: false
 }
 
-export default memo(icon)
+export default memo(Icon)

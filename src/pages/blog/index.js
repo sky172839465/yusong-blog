@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import SEO from '../../components/seo'
-import PostCard from './PostCard'
+import PostCard from './postCard'
 
 const BlogPage = props => {
   const posts = props.data.allMarkdownRemark.edges
