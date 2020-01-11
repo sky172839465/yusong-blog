@@ -113,6 +113,15 @@ module.exports = {
       options: {
         modulePath: `${__dirname}/src/cms/index.js`
       }
+    },
+    {
+      resolve: `gatsby-plugin-tinacms`,
+      options: {
+        plugins: [
+          `gatsby-tinacms-git`,
+          `gatsby-tinacms-remark`
+        ]
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

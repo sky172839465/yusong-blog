@@ -1,13 +1,13 @@
 import React from 'react'
 import clx from 'classnames'
 import { graphql } from 'gatsby'
+// import { remarkForm } from 'gatsby-tinacms-remark'
 import Img from 'gatsby-image'
-import _ from 'lodash'
 import SEO from '../components/seo'
 import FullWidthArea from '../components/fullWidthArea'
 import ImageCaption from '../components/imageCaption'
 
-const Template = (props) => {
+const BlogPost = (props) => {
   const { markdownRemark } = props.data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
   const {
@@ -17,7 +17,7 @@ const Template = (props) => {
     imageHostName,
     imageHostUrl
   } = frontmatter
-  const fluid = _.get(featuredimage, 'childImageSharp.fluid', {})
+  const { fluid } = featuredimage.childImageSharp
   return (
     <>
       <SEO
@@ -54,7 +54,8 @@ const Template = (props) => {
   )
 }
 
-export default Template
+export default BlogPost
+// export default remarkForm(BlogPost)
 
 export const pageQuery = graphql`
   query($category: String!, $title: String!) {
@@ -62,6 +63,7 @@ export const pageQuery = graphql`
       category: { eq: $category },
       title: { eq: $title }
     }) {
+      id
       html
       frontmatter {
         date,
@@ -77,6 +79,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      ...TinaRemark
     }
   }
 `

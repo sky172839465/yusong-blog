@@ -1,16 +1,16 @@
 const path = require(`path`)
 const _ = require(`lodash`)
 
-exports.onCreateNode = ({ node }) => {
-  if (node.internal.type === `MarkdownRemark`) {
-    console.log(node.internal.type)
-  }
-}
+// exports.onCreateNode = ({ node }) => {
+//   if (node.internal.type === `MarkdownRemark`) {
+//     console.log(node.internal.type)
+//   }
+// }
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`)
+  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
 
   return graphql(`
     {
