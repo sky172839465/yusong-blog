@@ -1,9 +1,9 @@
 ---
+title: Test generate post path1233
 category: blog
-title: Test generate post path
-date: 2019-07-27T07:43:22.201Z
+date: '2019-07-27T07:43:22.201Z'
 description: check customize widget active 2
-featuredimage: /img/publication-logo.png
+featuredimage: ../../../static/img/publication-logo.png
 tags:
   - post
   - generate
