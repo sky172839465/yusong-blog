@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 import clx from 'classnames'
 import { graphql } from 'gatsby'
 // import { remarkForm } from 'gatsby-tinacms-remark'
@@ -8,7 +9,7 @@ import FullWidthArea from '../components/fullWidthArea'
 import ImageCaption from '../components/imageCaption'
 
 const BlogPost = (props) => {
-  const { markdownRemark } = props.data // data.markdownRemark holds our post data
+  const { markdownRemark } = props.data
   const { frontmatter, html } = markdownRemark
   const {
     title,
@@ -17,7 +18,7 @@ const BlogPost = (props) => {
     imageHostName,
     imageHostUrl
   } = frontmatter
-  const { fluid } = featuredimage.childImageSharp
+  const { fluid } = _.get(featuredimage, 'childImageSharp', {})
   return (
     <>
       <SEO
@@ -25,30 +26,32 @@ const BlogPost = (props) => {
         description={description}
         path={props.path}
       />
-      {
-        fluid && (
-          <FullWidthArea>
-            <h1
-              className={clx(
-                'title',
-                'has-text-centered',
-                'has-text-dark'
-              )}
-            >
-              {title}
-            </h1>
-            <Img fluid={fluid} />
-            {
-              imageHostName &&
-              <ImageCaption
-                imageHostName={imageHostName}
-                imageHostUrl={imageHostUrl}
-              />
-            }
-            <br />
-          </FullWidthArea>
-        )
-      }
+      <FullWidthArea>
+        <h1
+          className={clx(
+            'title',
+            'has-text-centered',
+            'has-text-dark'
+          )}
+        >
+          {title}
+        </h1>
+        {
+          fluid && (
+            <>
+              <Img fluid={fluid} />
+              {
+                imageHostName &&
+                <ImageCaption
+                  imageHostName={imageHostName}
+                  imageHostUrl={imageHostUrl}
+                />
+              }
+            </>
+          )
+        }
+        <br />
+      </FullWidthArea>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </>
   )
@@ -79,7 +82,7 @@ export const pageQuery = graphql`
           }
         }
       }
-      ...TinaRemark
+      # ...TinaRemark
     }
   }
 `
