@@ -15,10 +15,9 @@ const PostCard = ({ frontmatter }) => {
     _.toLower,
     _.kebabCase
   )(title)
-  const fluid = _.get(featuredimage, 'childImageSharp.fluid', {})
   return (
     <div className='card'>
-      {fluid && <Img fluid={fluid} />}
+      {featuredimage && <Img fluid={featuredimage.childImageSharp.fluid} />}
       <div className='card-content'>
         <div className='media-content'>
           <p className='title is-4 has-text-dark'>{title}</p>
@@ -29,15 +28,10 @@ const PostCard = ({ frontmatter }) => {
         <div className='content'>
           {description}
         </div>
-      </div>
-      <footer className='card-footer'>
-        <Link
-          className='card-footer-item'
-          to={`/${category}/${postUrl}`}
-        >
-          See full post
+        <Link to={`/${category}/${postUrl}`}>
+            Read more
         </Link>
-      </footer>
+      </div>
     </div>
   )
 }

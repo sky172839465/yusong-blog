@@ -1,14 +1,9 @@
 import React from 'react'
-import SEO from '../components/seo'
+import HomePage from './home'
 
 const IndexPage = props => {
   return (
-    <>
-      <SEO title='Home' />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-    </>
+    <HomePage />
   )
 }
 

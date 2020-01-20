@@ -16,10 +16,9 @@ import '../styles/bulma/index.scss'
 import './markdown.css'
 
 const Main = styled.main`
-  margin-top: 5rem;
   min-height: calc(100vh - 9rem);
   max-width: 800px;
-  margin: 5rem auto 0;
+  margin: 63px auto 0;
   padding: 0 1.0875rem 1.45rem;
   padding-top: 0;
 `

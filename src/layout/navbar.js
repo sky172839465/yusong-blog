@@ -32,7 +32,7 @@ const Navbar = props => {
   const { path: currentPath } = props
   return (
     <nav
-      className='navbar is-light is-fixed-top'
+      className='navbar is-light'
       role='navigation'
       aria-label='main navigation'
     >
