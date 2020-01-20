@@ -9,6 +9,7 @@ import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+import DEFAULT_META from '../constants/defaultMeta'
 
 const defaultMetaList = [
   {
@@ -20,6 +21,80 @@ const defaultMetaList = [
     content: `summary`
   }
 ]
+
+const getOpenGraphMetaList = (meta = {}) => {
+  const { keywords, type, url, path, title, description, siteName, image } = {
+    ...DEFAULT_META,
+    ...meta
+  }
+  return [
+    {
+      name: 'keywords',
+      content: keywords
+    },
+    {
+      property: 'og:type',
+      content: type
+    },
+    {
+      property: 'og:url',
+      content: path ? `${DEFAULT_META.url}${path}` : url
+    },
+    {
+      property: 'og:title',
+      content: title
+    },
+    {
+      property: 'og:description',
+      content: description
+    },
+    {
+      property: 'og:site_name',
+      content: siteName
+    },
+    {
+      property: 'og:image',
+      content: image
+    }
+  ]
+}
+const getTwitterMetaList = (meta = {}) => {
+  const { title, image } = {
+    ...DEFAULT_META,
+    ...meta
+  }
+  const AT_ME = `@${DEFAULT_META.id}`
+  return [
+    {
+      property: 'twitter:site',
+      content: AT_ME
+    },
+    {
+      property: 'twitter:creator',
+      content: AT_ME
+    },
+    {
+      property: 'twitter:title',
+      content: title
+    },
+    {
+      property: 'twitter:description',
+      content: title
+    },
+    {
+      property: 'twitter:card',
+      content: 'summary_large_image'
+    },
+    {
+      property: 'twitter:widgets:new-embed-design',
+      content: 'on'
+    },
+    {
+      property: 'twitter:image:src',
+      content: image
+    }
+  ]
+}
 
 const SEO = ({ description, lang, meta, title, author, path }) => {
   const { site } = useStaticQuery(
@@ -39,43 +114,22 @@ const SEO = ({ description, lang, meta, title, author, path }) => {
   const metaTitle = title || site.siteMetadata.title
   const metaDescription = description || site.siteMetadata.description
   const metaAuthor = author || site.siteMetadata.author
+  const customizeMeta = {
+    title: metaTitle,
+    description: metaDescription,
+    author: metaAuthor
+  }
   const currentMetaList = [
-    // title
-    {
-      property: `og:title`,
-      content: metaTitle
-    },
-    {
-      name: `twitter:title`,
-      content: metaTitle
-    },
-    // desc
     {
       name: `description`,
       content: metaDescription
     },
     {
-      property: `og:description`,
-      content: metaDescription
-    },
-    {
-      name: `twitter:description`,
-      content: metaDescription
-    },
-    // author
-    {
       name: `author`,
       content: metaAuthor
     },
-    {
-      name: `twitter:creator`,
-      content: metaAuthor
-    },
-    // url
-    {
-      name: `og:url`,
-      content: `https://yusong.io${path}`
-    }
+    ...getOpenGraphMetaList(customizeMeta),
+    ...getTwitterMetaList(customizeMeta)
   ]
 
   return (

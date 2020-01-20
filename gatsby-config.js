@@ -1,3 +1,6 @@
+const _ = require('lodash')
+const { DEFAULT_META } = require('./src/constants/defaultMeta')
+
 const netlifyCmsPaths = {
   resolve: `gatsby-plugin-netlify-cms-paths`,
   options: {
@@ -5,12 +8,14 @@ const netlifyCmsPaths = {
   }
 }
 
+const SITE_META_LIST = [
+  'title',
+  'description',
+  'author'
+]
+
 module.exports = {
-  siteMetadata: {
-    title: `YUSONG.IO`,
-    description: `Records something about frontend development !`,
-    author: `Yusong Hsu`
-  },
+  siteMetadata: _.pick(DEFAULT_META, SITE_META_LIST),
   plugins: [
     {
       resolve: `gatsby-plugin-manifest`,
