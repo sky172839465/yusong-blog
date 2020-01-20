@@ -18,7 +18,7 @@ import './markdown.css'
 const Main = styled.main`
   min-height: calc(100vh - 9rem);
   max-width: 800px;
-  margin: 63px auto 0;
+  margin: 0 auto;
   padding: 0 1.0875rem 1.45rem;
   padding-top: 0;
 `

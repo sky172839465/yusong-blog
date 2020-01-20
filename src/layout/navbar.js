@@ -3,6 +3,7 @@ import _ from 'lodash'
 import { Link } from 'gatsby'
 import clx from 'classnames'
 import styled from 'styled-components'
+import { DEFAULT_META } from '../constants/defaultMeta'
 
 const BrandArea = styled.div`
   float: left;
@@ -39,7 +40,7 @@ const Navbar = props => {
       <div className='navbar-brand'>
         <BrandArea>
           <Link className='button is-dark' to='/'>
-            YUSONG.IO
+            {DEFAULT_META.title}
           </Link>
         </BrandArea>
         <span
