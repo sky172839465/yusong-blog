@@ -9,18 +9,7 @@ import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
-import DEFAULT_META from '../constants/defaultMeta'
-
-const defaultMetaList = [
-  {
-    property: `og:type`,
-    content: `website`
-  },
-  {
-    name: `twitter:card`,
-    content: `summary`
-  }
-]
+import { DEFAULT_META } from '../constants/defaultMeta'
 
 const getOpenGraphMetaList = (meta = {}) => {
   const { keywords, type, url, path, title, description, siteName, image } = {
@@ -96,7 +85,7 @@ const getTwitterMetaList = (meta = {}) => {
   ]
 }
 
-const SEO = ({ description, lang, meta, title, author, path }) => {
+const SEO = ({ description, lang, meta, title, author, path, type }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -111,23 +100,14 @@ const SEO = ({ description, lang, meta, title, author, path }) => {
     `
   )
 
-  const metaTitle = title || site.siteMetadata.title
-  const metaDescription = description || site.siteMetadata.description
-  const metaAuthor = author || site.siteMetadata.author
   const customizeMeta = {
-    title: metaTitle,
-    description: metaDescription,
-    author: metaAuthor
+    title: title || site.siteMetadata.title,
+    description: description || site.siteMetadata.description,
+    author: author || site.siteMetadata.author,
+    path,
+    type
   }
   const currentMetaList = [
-    {
-      name: `description`,
-      content: metaDescription
-    },
-    {
-      name: `author`,
-      content: metaAuthor
-    },
     ...getOpenGraphMetaList(customizeMeta),
     ...getTwitterMetaList(customizeMeta)
   ]
@@ -139,7 +119,7 @@ const SEO = ({ description, lang, meta, title, author, path }) => {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={defaultMetaList.concat(currentMetaList, meta)}
+      meta={currentMetaList.concat(meta)}
     />
   )
 }

@@ -25,6 +25,7 @@ const BlogPost = (props) => {
         title={title}
         description={description}
         path={props.path}
+        type='article'
       />
       <FullWidthArea>
         <h1
