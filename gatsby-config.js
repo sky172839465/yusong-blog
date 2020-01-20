@@ -132,13 +132,13 @@ module.exports = {
           hidden: process.env.NODE_ENV === `production`
         }
       }
+    },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/index.js`
+      }
     }
-    // {
-    //   resolve: 'gatsby-plugin-netlify-cms',
-    //   options: {
-    //     modulePath: `${__dirname}/src/cms/index.js`
-    //   }
-    // }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
