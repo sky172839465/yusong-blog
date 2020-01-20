@@ -1,5 +1,5 @@
 ---
-title: JavaScript generate your code snipnbkjpet
+title: JavaScript generate your code snippet
 category: blog
 date: '2019-06-07T01:00:00.000Z'
 description: "透過 JavaScript 產生程式碼片段後，可以有效提升作業的效率與降低出錯的機率 \U0001F916"
