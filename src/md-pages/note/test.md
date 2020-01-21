@@ -1,12 +1,13 @@
 ---
 category: note
-title: Test generate post path
-date: 2020-01-08T15:43:22.201Z
+title: Waist rehabilitation
+date: 2020-01-21T15:43:22.201Z
+description: Record when hospital open
 tags:
-  - test
+  - Waist
 ---
-This is test 1234
+Waist rehabilitationThis is test 1234
 
 ```javascript
-console.log('Every thing is good')
+console.log('Eve
 ```
