@@ -44,15 +44,6 @@ const BlogPost = (props) => {
           <PostHeader>
             {title}
           </PostHeader>
-          <div className='tags'>
-            {
-              tags.map(tag => (
-                <span key={tag} className='tag is-light'>
-                  {tag}
-                </span>
-              ))
-            }
-          </div>
         </div>
         {
           fluid && (
@@ -71,6 +62,15 @@ const BlogPost = (props) => {
         <br />
       </FullWidthArea>
       <div dangerouslySetInnerHTML={{ __html: html }} />
+      <div className='tags'>
+        {
+          tags.map(tag => (
+            <span key={tag} className='tag is-light'>
+              {tag}
+            </span>
+          ))
+        }
+      </div>
     </>
   )
 }
