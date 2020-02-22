@@ -52,7 +52,7 @@ const getOpenGraphMetaList = (meta = {}) => {
   ]
 }
 const getTwitterMetaList = (meta = {}) => {
-  const { title, image } = {
+  const { title, image, description } = {
     ...DEFAULT_META,
     ...meta
   }
@@ -72,7 +72,7 @@ const getTwitterMetaList = (meta = {}) => {
     },
     {
       property: 'twitter:description',
-      content: title
+      content: description
     },
     {
       property: 'twitter:card',
