@@ -44,6 +44,10 @@ const getOpenGraphMetaList = (meta = {}) => {
     {
       property: 'og:image',
       content: image
+    },
+    {
+      property: 'fb:app_id',
+      content: '1555868404551950'
     }
   ]
 }
@@ -104,13 +108,14 @@ const SEO = ({ description, lang, meta, title, author, path, type }) => {
     title: title || site.siteMetadata.title,
     description: description || site.siteMetadata.description,
     author: author || site.siteMetadata.author,
-    path,
-    type
+    type: DEFAULT_META.type,
+    path
   }
   const currentMetaList = [
     ...getOpenGraphMetaList(customizeMeta),
     ...getTwitterMetaList(customizeMeta)
   ]
+  console.log(currentMetaList)
 
   return (
     <Helmet
