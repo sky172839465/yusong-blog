@@ -1,22 +1,18 @@
 import React from 'react'
-import _ from 'lodash'
 import { Link } from 'gatsby'
+import { getPagePathFromEdge } from '../../helper/pathHelper'
 
-const NoteCard = ({ frontmatter }) => {
+const NoteCard = ({ edge }) => {
   const {
-    category,
     title,
     description,
     date
-  } = frontmatter
-  const noteUrl = _.flow(
-    _.toLower,
-    _.kebabCase
-  )(title)
+  } = edge.node.frontmatter
+  const pagePath = getPagePathFromEdge(edge)
   return (
     <Link
       className='card-footer-item'
-      to={`/${category}/${noteUrl}`}
+      to={pagePath}
     >
       <div className='card'>
         <div className='card-content'>

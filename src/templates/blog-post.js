@@ -62,11 +62,8 @@ export default BlogPost
 // export default remarkForm(BlogPost)
 
 export const pageQuery = graphql`
-  query($category: String!, $title: String!) {
-    markdownRemark(frontmatter: {
-      category: { eq: $category },
-      title: { eq: $title }
-    }) {
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
       frontmatter {

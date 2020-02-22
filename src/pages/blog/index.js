@@ -4,7 +4,7 @@ import SEO from '../../components/seo'
 import PostCard from './postCard'
 
 const BlogPage = props => {
-  const posts = props.data.allMarkdownRemark.edges
+  const { edges } = props.data.allMarkdownRemark
   return (
     <>
       <SEO
@@ -13,10 +13,10 @@ const BlogPage = props => {
         path={props.path}
       />
       {
-        posts.map(({ node: { id, frontmatter } }) => {
+        edges.map(edge => {
           return (
-            <div key={id} className='column'>
-              <PostCard frontmatter={frontmatter} />
+            <div key={edge.node.id} className='column'>
+              <PostCard edge={edge} />
             </div>
           )
         })
@@ -41,6 +41,9 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             category
             title

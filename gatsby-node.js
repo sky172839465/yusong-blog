@@ -1,18 +1,10 @@
-const path = require(`path`)
-const _ = require(`lodash`)
+const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
 
-// exports.onCreateNode = ({ node }) => {
-//   if (node.internal.type === `MarkdownRemark`) {
-//     console.log(node.internal.type)
-//   }
-// }
-
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
-
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
-
-  return graphql(`
+  const result = await graphql(`
     {
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
@@ -20,6 +12,9 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
+            fields {
+              slug
+            }
             frontmatter {
               category
               title
@@ -28,33 +23,53 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors)
-    }
+  `)
 
-    return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      const { frontmatter: { category, title } } = node
-      switch (category) {
-        case 'blog':
-        case 'note': {
-          const postUrl = _.flow(
-            _.toLower,
-            _.kebabCase
-          )(title)
-          createPage({
-            path: `/${category}/${postUrl}`,
-            component: blogPostTemplate,
-            context: {
-              category,
-              title
-            } // additional data can be passed via context
-          })
-          break
-        }
-        default:
-          break
+  if (result.errors) {
+    throw result.errors
+  }
+
+  const { edges } = result.data.allMarkdownRemark
+  for (const edge of edges) {
+    const {
+      node: {
+        fields: { slug },
+        frontmatter: { category, title }
       }
+    } = edge
+    switch (category) {
+      case 'blog':
+      case 'note': {
+        createPage({
+          path: `/${category}${slug}`,
+          component: blogPostTemplate,
+          context: {
+            category,
+            title,
+            slug
+          } // additional data can be passed via context
+        })
+        break
+      }
+      default:
+        break
+    }
+  }
+}
+
+/**
+ * generate slug
+ * https://www.gatsbyjs.org/docs/creating-slugs-for-pages/
+ */
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === 'MarkdownRemark') {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: 'slug',
+      node,
+      value
     })
-  })
+  }
 }

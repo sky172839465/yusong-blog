@@ -4,7 +4,7 @@ import SEO from '../../components/seo'
 import NoteCard from './noteCard'
 
 const NotePage = props => {
-  const notes = props.data.allMarkdownRemark.edges
+  const { edges } = props.data.allMarkdownRemark
   return (
     <>
       <SEO
@@ -13,10 +13,10 @@ const NotePage = props => {
         path={props.path}
       />
       {
-        notes.map(({ node: { id, frontmatter } }) => {
+        edges.map((edge) => {
           return (
-            <div key={id} className='column'>
-              <NoteCard frontmatter={frontmatter} />
+            <div key={edge.node.id} className='column'>
+              <NoteCard edge={edge} />
             </div>
           )
         })
@@ -41,6 +41,9 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             category
             title

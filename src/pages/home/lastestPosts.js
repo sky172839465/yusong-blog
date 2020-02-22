@@ -1,6 +1,6 @@
 import React from 'react'
-import _ from 'lodash'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import { getPagePathFromEdge } from '../../helper/pathHelper'
 
 const LastestPosts = () => {
   const data = useStaticQuery(graphql`
@@ -22,6 +22,9 @@ const LastestPosts = () => {
         edges {
           node {
             id
+            fields {
+              slug
+            }
             frontmatter {
               category
               title
@@ -36,17 +39,19 @@ const LastestPosts = () => {
   `)
   return (
     <>
-      {data.allMarkdownRemark.edges.map(({ node: { id, frontmatter } }) => {
+      {data.allMarkdownRemark.edges.map(edge => {
         const {
-          category,
+          node: {
+            id,
+            frontmatter
+          }
+        } = edge
+        const {
           title,
           description,
           date
         } = frontmatter
-        const postUrl = _.flow(
-          _.toLower,
-          _.kebabCase
-        )(title)
+        const pagePath = getPagePathFromEdge(edge)
         return (
           <div key={id} className='card'>
             <div className='card-content'>
@@ -59,7 +64,7 @@ const LastestPosts = () => {
               <div className='content'>
                 {description}
               </div>
-              <Link to={`/${category}/${postUrl}`}>
+              <Link to={pagePath}>
                 Read more
               </Link>
             </div>

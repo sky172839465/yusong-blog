@@ -1,20 +1,16 @@
 import React from 'react'
-import _ from 'lodash'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+import { getPagePathFromEdge } from '../../helper/pathHelper'
 
-const PostCard = ({ frontmatter }) => {
+const PostCard = ({ edge }) => {
   const {
-    category,
     title,
     description,
     date,
     featuredimage
-  } = frontmatter
-  const postUrl = _.flow(
-    _.toLower,
-    _.kebabCase
-  )(title)
+  } = edge.node.frontmatter
+  const pagePath = getPagePathFromEdge(edge)
   return (
     <div className='card'>
       {featuredimage && <Img fluid={featuredimage.childImageSharp.fluid} />}
@@ -28,7 +24,7 @@ const PostCard = ({ frontmatter }) => {
         <div className='content'>
           {description}
         </div>
-        <Link to={`/${category}/${postUrl}`}>
+        <Link to={pagePath}>
             Read more
         </Link>
       </div>
