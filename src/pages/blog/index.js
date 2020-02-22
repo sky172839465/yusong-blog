@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import SEO from '../../components/seo'
-import PostCard from './postCard'
+import PreviewCard from '../../components/previewCard'
 
 const BlogPage = props => {
   const { edges } = props.data.allMarkdownRemark
@@ -16,7 +16,7 @@ const BlogPage = props => {
         edges.map(edge => {
           return (
             <div key={edge.node.id} className='column'>
-              <PostCard edge={edge} />
+              <PreviewCard edge={edge} />
             </div>
           )
         })

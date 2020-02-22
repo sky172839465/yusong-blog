@@ -1,19 +1,30 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
-import { getPagePathFromEdge } from '../../helper/pathHelper'
+import styled from 'styled-components'
+import { getPagePathFromEdge } from '../helper/pathHelper'
 
-const PostCard = ({ edge }) => {
+const Card = styled.div`
+  margin-bottom: .5rem;
+`
+
+const PreviewCard = ({ edge }) => {
+  const {
+    node: {
+      frontmatter
+    }
+  } = edge
   const {
     title,
     description,
     date,
     featuredimage
-  } = edge.node.frontmatter
+  } = frontmatter
   const pagePath = getPagePathFromEdge(edge)
+  const fluid = featuredimage && featuredimage.childImageSharp.fluid
   return (
-    <div className='card'>
-      {featuredimage && <Img fluid={featuredimage.childImageSharp.fluid} />}
+    <Card className='card'>
+      {fluid && <Img fluid={fluid} />}
       <div className='card-content'>
         <div className='media-content'>
           <p className='title is-4 has-text-dark'>{title}</p>
@@ -25,15 +36,11 @@ const PostCard = ({ edge }) => {
           {description}
         </div>
         <Link to={pagePath}>
-            Read more
+          Read more
         </Link>
       </div>
-    </div>
+    </Card>
   )
 }
 
-PostCard.defaultProps = {
-  frontmatter: {}
-}
-
-export default PostCard
+export default PreviewCard

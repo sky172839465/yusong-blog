@@ -5,6 +5,7 @@ import FullWidthArea from '../../components/fullWidthArea'
 
 const IntroArea = styled.div`
   padding: 1rem;
+  margin-bottom: 1rem;
 `
 
 const IntroPost = () => {
