@@ -115,7 +115,6 @@ const SEO = ({ description, lang, meta, title, author, path, type }) => {
     ...getOpenGraphMetaList(customizeMeta),
     ...getTwitterMetaList(customizeMeta)
   ]
-  console.log(currentMetaList)
 
   return (
     <Helmet
