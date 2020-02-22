@@ -108,7 +108,7 @@ const SEO = ({ description, lang, meta, title, author, path, type }) => {
     title: title || site.siteMetadata.title,
     description: description || site.siteMetadata.description,
     author: author || site.siteMetadata.author,
-    type: DEFAULT_META.type,
+    type: type || DEFAULT_META.type,
     path
   }
   const currentMetaList = [
