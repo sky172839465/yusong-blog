@@ -1,12 +1,17 @@
 import React from 'react'
 import _ from 'lodash'
 import clx from 'classnames'
+import styled from 'styled-components'
 import { graphql } from 'gatsby'
 // import { remarkForm } from 'gatsby-tinacms-remark'
 import Img from 'gatsby-image'
 import SEO from '../components/seo'
 import FullWidthArea from '../components/fullWidthArea'
 import ImageCaption from '../components/imageCaption'
+
+const PostHeader = styled.h1`
+  margin-top: 1.5rem;
+`
 
 const BlogPost = (props) => {
   const { markdownRemark } = props.data
@@ -16,7 +21,8 @@ const BlogPost = (props) => {
     description,
     featuredimage,
     imageHostName,
-    imageHostUrl
+    imageHostUrl,
+    tags
   } = frontmatter
   const { fluid } = _.get(featuredimage, 'childImageSharp', {})
   return (
@@ -28,15 +34,26 @@ const BlogPost = (props) => {
         type='article'
       />
       <FullWidthArea>
-        <h1
+        <div
           className={clx(
             'title',
             'has-text-centered',
             'has-text-dark'
           )}
         >
-          {title}
-        </h1>
+          <PostHeader>
+            {title}
+          </PostHeader>
+          <div className='tags'>
+            {
+              tags.map(tag => (
+                <span key={tag} className='tag is-light'>
+                  {tag}
+                </span>
+              ))
+            }
+          </div>
+        </div>
         {
           fluid && (
             <>
@@ -70,6 +87,7 @@ export const pageQuery = graphql`
         date,
         title,
         description,
+        tags,
         imageHostName,
         imageHostUrl,
         featuredimage {
