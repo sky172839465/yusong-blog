@@ -7,7 +7,7 @@ const DEFAULT_META = {
   type: 'website',
   url: SITE_URL,
   siteName: `Yusong's Blog`,
-  image: `${SITE_URL}/icons/icon-48x48.png`,
+  image: `${SITE_URL}/icons/icon-256x256.png`,
   id: 'sky172839465'
 }
 
