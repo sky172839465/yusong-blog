@@ -1,7 +1,7 @@
 const SITE_URL = 'http://yusong.io'
 const DEFAULT_META = {
   title: 'YUSONG.IO',
-  description: 'Records something about frontend development !',
+  description: `Hi I'm Yusong, a frontend developer and ACGN lover !`,
   author: 'Yusong Hsu',
   keywords: 'frontend-development, gatsbyjs, react',
   type: 'website',

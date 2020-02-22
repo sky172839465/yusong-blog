@@ -7,8 +7,7 @@ const HomePage = props => {
   return (
     <>
       <SEO
-        title='Note'
-        description='Write down something I should remember...'
+        title='Home'
         path={props.path}
       />
       <IntroPost />
