@@ -42,7 +42,7 @@ const Icon = props => {
 }
 
 Icon.defaultProps = {
-  color: 'purple',
+  color: 'darkblue',
   size: '1.2rem',
   verticalAlign: 'middle',
   position: POSITION.LEFT,
