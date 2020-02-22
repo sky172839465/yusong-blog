@@ -7,6 +7,7 @@ featuredimage: ../../../static/img/publication-logo.png
 tags:
   - post
   - generate
+  - JavaScript
 ---
 This is test
 

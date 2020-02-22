@@ -2,15 +2,18 @@ import React from 'react'
 import _ from 'lodash'
 import clx from 'classnames'
 import styled from 'styled-components'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 // import { remarkForm } from 'gatsby-tinacms-remark'
 import Img from 'gatsby-image'
-import SEO from '../components/seo'
-import FullWidthArea from '../components/fullWidthArea'
-import ImageCaption from '../components/imageCaption'
+import SEO from '../../components/seo'
+import Title from '../../components/title'
+import FullWidthArea from '../../components/fullWidthArea'
+import ImageCaption from '../../components/imageCaption'
 
-const PostHeader = styled.h1`
-  margin-top: 1.5rem;
+const TagsArea = styled.div`
+  span {
+    margin-right: .5rem;
+  }
 `
 
 const BlogPost = (props) => {
@@ -41,9 +44,7 @@ const BlogPost = (props) => {
             'has-text-dark'
           )}
         >
-          <PostHeader>
-            {title}
-          </PostHeader>
+          <Title>{title}</Title>
         </div>
         {
           fluid && (
@@ -62,15 +63,17 @@ const BlogPost = (props) => {
         <br />
       </FullWidthArea>
       <div dangerouslySetInnerHTML={{ __html: html }} />
-      <div className='tags'>
+      <TagsArea className='tags'>
         {
           tags.map(tag => (
-            <span key={tag} className='tag is-light'>
-              {tag}
-            </span>
+            <Link key={tag} to={`/blog/tags/${tag}`}>
+              <span className='tag is-light'>
+                {tag}
+              </span>
+            </Link>
           ))
         }
-      </div>
+      </TagsArea>
     </>
   )
 }

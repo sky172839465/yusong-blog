@@ -4,14 +4,10 @@ import styled from 'styled-components'
 import _ from 'lodash'
 import { FaTags } from 'react-icons/fa'
 import SEO from '../../components/seo'
+import Title from '../../components/title'
 import Icon from '../../components/icon'
 
 const title = 'Tags'
-
-const Title = styled.h1`
-  text-align: center;
-  margin-top: 1.5rem;
-`
 
 const TagsArea = styled.div`
   span {
