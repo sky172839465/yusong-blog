@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { DEFAULT_META } from '../constants/defaultMeta'
 
 const getOpenGraphMetaList = (meta = {}) => {
-  const { keywords, type, url, path, title, description, siteName, image } = {
+  const { keywords, type, siteUrl, path, title, description, siteName, image } = {
     ...DEFAULT_META,
     ...meta
   }
@@ -27,7 +27,7 @@ const getOpenGraphMetaList = (meta = {}) => {
     },
     {
       property: 'og:url',
-      content: path ? `${DEFAULT_META.url}${path}` : url
+      content: path ? `${DEFAULT_META.siteUrl}${path}` : siteUrl
     },
     {
       property: 'og:title',

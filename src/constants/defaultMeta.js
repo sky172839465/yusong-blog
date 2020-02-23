@@ -5,10 +5,10 @@ const DEFAULT_META = {
   author: 'Yusong Hsu',
   keywords: 'frontend-development, gatsbyjs, react',
   type: 'website',
-  url: SITE_URL,
+  siteUrl: SITE_URL,
   siteName: `Yusong's Blog`,
   image: `${SITE_URL}/icons/icon-256x256.png`,
   id: 'sky172839465'
 }
 
-module.exports = { DEFAULT_META }
+module.exports = { SITE_URL, DEFAULT_META }

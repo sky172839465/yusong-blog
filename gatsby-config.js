@@ -11,12 +11,14 @@ const netlifyCmsPaths = {
 const SITE_META_LIST = [
   'title',
   'description',
-  'author'
+  'author',
+  'siteUrl'
 ]
 
 module.exports = {
   siteMetadata: _.pick(DEFAULT_META, SITE_META_LIST),
   plugins: [
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
