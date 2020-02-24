@@ -1,5 +1,7 @@
 backend:
-  name: git-gateway
+  # name: git-gateway
+  name: github
+  repo: sky172839465/yusong.io
   branch: master
   squash_merges: true
   commit_messages:
