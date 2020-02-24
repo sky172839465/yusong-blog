@@ -3,7 +3,7 @@ import _ from 'lodash'
 import { Link } from 'gatsby'
 import clx from 'classnames'
 import styled from 'styled-components'
-import { DEFAULT_META } from '../constants/defaultMeta'
+import { META_KEY, DEFAULT_META } from '../constants/defaultMeta'
 
 const BrandArea = styled.div`
   float: left;
@@ -40,7 +40,7 @@ const Navbar = props => {
       <div className='navbar-brand'>
         <BrandArea>
           <Link className='button is-dark' to='/'>
-            {DEFAULT_META.title}
+            {DEFAULT_META[META_KEY.TITLE]}
           </Link>
         </BrandArea>
         <span

@@ -9,7 +9,7 @@ import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
-import { DEFAULT_META } from '../constants/defaultMeta'
+import { META_KEY, DEFAULT_META } from '../constants/defaultMeta'
 
 const getOpenGraphMetaList = (meta = {}) => {
   const { keywords, type, siteUrl, path, title, description, siteName, image } = {
@@ -27,7 +27,7 @@ const getOpenGraphMetaList = (meta = {}) => {
     },
     {
       property: 'og:url',
-      content: path ? `${DEFAULT_META.siteUrl}${path}` : siteUrl
+      content: path ? `${DEFAULT_META[META_KEY.SITE_URL]}${path}` : siteUrl
     },
     {
       property: 'og:title',
@@ -56,7 +56,7 @@ const getTwitterMetaList = (meta = {}) => {
     ...DEFAULT_META,
     ...meta
   }
-  const AT_ME = `@${DEFAULT_META.id}`
+  const AT_ME = `@${DEFAULT_META[META_KEY.ID]}`
   return [
     {
       property: 'twitter:site',
@@ -108,7 +108,7 @@ const SEO = ({ description, lang, meta, title, author, path, type }) => {
     title: title || site.siteMetadata.title,
     description: description || site.siteMetadata.description,
     author: author || site.siteMetadata.author,
-    type: type || DEFAULT_META.type,
+    type: type || DEFAULT_META[META_KEY.TYPE],
     path
   }
   const currentMetaList = [

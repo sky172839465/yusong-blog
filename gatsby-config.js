@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const { DEFAULT_META } = require('./src/constants/defaultMeta')
+const { META_KEY, DEFAULT_META } = require('./src/constants/defaultMeta')
 
 const netlifyCmsPaths = {
   resolve: `gatsby-plugin-netlify-cms-paths`,
@@ -9,10 +9,10 @@ const netlifyCmsPaths = {
 }
 
 const SITE_META_LIST = [
-  'title',
-  'description',
-  'author',
-  'siteUrl'
+  META_KEY.TITLE,
+  META_KEY.DESCRIPTION,
+  META_KEY.AUTHOR,
+  META_KEY.SITE_URL
 ]
 
 module.exports = {
