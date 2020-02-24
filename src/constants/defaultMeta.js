@@ -1,5 +1,3 @@
-const SITE_URL = 'http://yusong.io'
-
 const META_KEY = {
   TITLE: 'title',
   DESCRIPTION: 'description',
@@ -18,9 +16,9 @@ const DEFAULT_META = {
   [META_KEY.AUTHOR]: 'Yusong Hsu',
   [META_KEY.KEYWORDS]: 'frontend-development, gatsbyjs, react',
   [META_KEY.TYPE]: 'website',
-  [META_KEY.SITE_URL]: SITE_URL,
+  [META_KEY.SITE_URL]: 'http://yusong.io',
   [META_KEY.SITE_NAME]: `Yusong's Blog`,
-  [META_KEY.IMAGE]: `${SITE_URL}/icons/icon-256x256.png`,
+  [META_KEY.IMAGE]: '/icons/icon-256x256.png',
   [META_KEY.ID]: 'sky172839465'
 }
 

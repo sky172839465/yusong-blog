@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { META_KEY, DEFAULT_META } from '../constants/defaultMeta'
 
 const getOpenGraphMetaList = (meta = {}) => {
-  const { keywords, type, siteUrl, path, title, description, siteName, image } = {
+  const { keywords, type, path, title, description, siteName, image } = {
     ...DEFAULT_META,
     ...meta
   }
@@ -27,7 +27,7 @@ const getOpenGraphMetaList = (meta = {}) => {
     },
     {
       property: 'og:url',
-      content: path ? `${DEFAULT_META[META_KEY.SITE_URL]}${path}` : siteUrl
+      content: path
     },
     {
       property: 'og:title',
@@ -89,7 +89,7 @@ const getTwitterMetaList = (meta = {}) => {
   ]
 }
 
-const SEO = ({ description, lang, meta, title, author, path, type }) => {
+const SEO = ({ description, lang, meta, title, author, path, type, image }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -109,7 +109,8 @@ const SEO = ({ description, lang, meta, title, author, path, type }) => {
     description: description || site.siteMetadata.description,
     author: author || site.siteMetadata.author,
     type: type || DEFAULT_META[META_KEY.TYPE],
-    path
+    image: `${window.location.origin}${image || DEFAULT_META[META_KEY.IMAGE]}`,
+    path: `${window.location.origin}${path || ''}`
   }
   const currentMetaList = [
     ...getOpenGraphMetaList(customizeMeta),

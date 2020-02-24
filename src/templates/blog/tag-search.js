@@ -12,15 +12,16 @@ const Title = styled.h1`
 const BlogPost = (props) => {
   const { edges } = props.data.allMarkdownRemark
   const { tag } = props.pageContext
+  const description = `Tagged "${tag}" posts`
   return (
     <>
       <SEO
         title={`Search tag: ${tag}`}
-        description={`Tag "${tag}" posts`}
+        description={description}
         path={props.path}
       />
       <Title>
-        Tagged "{tag}" posts
+        {description}
       </Title>
       {
         edges.map(edge => {

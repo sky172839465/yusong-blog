@@ -34,6 +34,7 @@ const BlogPost = (props) => {
         title={title}
         description={description}
         path={props.path}
+        image={featuredimage && featuredimage.childImageSharp.fluid.src}
         type='article'
       />
       <FullWidthArea>
