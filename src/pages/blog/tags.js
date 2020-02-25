@@ -64,7 +64,7 @@ export const pageQuery = graphql`
       },
       sort: {
         order: DESC
-        fields: frontmatter___date
+        fields: frontmatter___tags
       }
     ) {
       edges {

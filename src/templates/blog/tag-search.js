@@ -47,6 +47,10 @@ export const pageQuery = graphql`
             regex: $searchTagName
           }
         }
+      },
+      sort: {
+        order: DESC
+        fields: frontmatter___date
       }
     ) {
       edges {
