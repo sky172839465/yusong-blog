@@ -125,8 +125,8 @@ const SEO = ({ description, lang, meta, title, author, path, type, image }) => {
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
     >
-      {currentMetaList.concat(meta).map(metaInfo => {
-        return <meta {...metaInfo} />
+      {currentMetaList.concat(meta).map(({ property, content }, index) => {
+        return <meta property={property} content={content} key={index} />
       })}
     </Helmet>
   )
