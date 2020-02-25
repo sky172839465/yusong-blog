@@ -97,7 +97,8 @@ export const pageQuery = graphql`
         featuredimage {
           childImageSharp {
             # fluid(maxWidth: 700, maxHeight: 300) {
-            fluid {
+            fluid(maxWidth: 1200, quality: 90) {
+              aspectRatio
               ...GatsbyImageSharpFluid
             }
           }

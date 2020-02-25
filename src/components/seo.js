@@ -109,8 +109,8 @@ const SEO = ({ description, lang, meta, title, author, path, type, image }) => {
     description: description || site.siteMetadata.description,
     author: author || site.siteMetadata.author,
     type: type || DEFAULT_META[META_KEY.TYPE],
-    image: `${DEFAULT_META[META_KEY.SITE_URL]}${image || DEFAULT_META[META_KEY.IMAGE]}`,
-    path: `${DEFAULT_META[META_KEY.SITE_URL]}${path || ''}`
+    image: `${process.env.ROOT_URL}${image || DEFAULT_META[META_KEY.IMAGE]}`,
+    path: `${process.env.ROOT_URL}${path || ''}`
   }
   const currentMetaList = [
     ...getOpenGraphMetaList(customizeMeta),
