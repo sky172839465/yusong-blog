@@ -36,6 +36,10 @@ export const pageQuery = graphql`
             eq: "note"
           }
         }
+      },
+      sort: {
+        order: DESC
+        fields: frontmatter___date
       }
     ) {
       edges {
