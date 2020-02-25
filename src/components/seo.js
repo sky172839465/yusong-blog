@@ -7,7 +7,7 @@
 
 import React, { memo } from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import { META_KEY, DEFAULT_META } from '../constants/defaultMeta'
 
@@ -126,7 +126,13 @@ const SEO = ({ description, lang, meta, title, author, path, type, image }) => {
       titleTemplate={`%s | ${site.siteMetadata.title}`}
     >
       {currentMetaList.concat(meta).map(({ property, content }, index) => {
-        return <meta property={property} content={content} key={index} />
+        return (
+          <meta
+            property={property}
+            content={content}
+            key={index}
+          />
+        )
       })}
     </Helmet>
   )
