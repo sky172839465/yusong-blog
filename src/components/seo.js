@@ -124,8 +124,11 @@ const SEO = ({ description, lang, meta, title, author, path, type, image }) => {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={currentMetaList.concat(meta)}
-    />
+    >
+      {currentMetaList.concat(meta).map(metaInfo => {
+        return <meta {...metaInfo} />
+      })}
+    </Helmet>
   )
 }
 
