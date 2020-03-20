@@ -109,6 +109,13 @@ module.exports = {
               }
             }
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: true,
+              aliases: {}
+            }
+          },
           `gatsby-remark-responsive-iframe`,
           `gatsby-remark-copy-linked-files`
         ]
