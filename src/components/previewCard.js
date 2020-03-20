@@ -18,10 +18,10 @@ const PreviewCard = ({ edge }) => {
     title,
     description,
     date,
-    featuredimage
+    banner
   } = frontmatter
   const pagePath = getPagePathFromEdge(edge)
-  const fluid = featuredimage && featuredimage.childImageSharp.fluid
+  const fluid = banner && banner.childImageSharp.fluid
   return (
     <Card className='card'>
       {fluid && <Img fluid={fluid} />}

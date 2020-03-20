@@ -4,6 +4,7 @@ import clx from 'classnames'
 import styled from 'styled-components'
 import { graphql, Link } from 'gatsby'
 // import { remarkForm } from 'gatsby-tinacms-remark'
+import Markdown from 'react-markdown'
 import Img from 'gatsby-image'
 import SEO from '../../components/seo'
 import Title from '../../components/title'
@@ -22,19 +23,18 @@ const BlogPost = (props) => {
   const {
     title,
     description,
-    featuredimage,
-    imageHostName,
-    imageHostUrl,
+    banner,
+    bannerCredit,
     tags
   } = frontmatter
-  const { fluid } = _.get(featuredimage, 'childImageSharp', {})
+  const { fluid } = _.get(banner, 'childImageSharp', {})
   return (
     <>
       <SEO
         title={title}
         description={description}
         path={props.path}
-        image={featuredimage && featuredimage.childImageSharp.fluid.src}
+        image={banner && banner.childImageSharp.fluid.src}
         type='article'
       />
       <FullWidthArea>
@@ -52,11 +52,10 @@ const BlogPost = (props) => {
             <>
               <Img fluid={fluid} />
               {
-                imageHostName &&
-                <ImageCaption
-                  imageHostName={imageHostName}
-                  imageHostUrl={imageHostUrl}
-                />
+                bannerCredit &&
+                <ImageCaption>
+                  <Markdown linkTarget='_blank'>{bannerCredit}</Markdown>
+                </ImageCaption>
               }
             </>
           )
@@ -92,9 +91,8 @@ export const pageQuery = graphql`
         title,
         description,
         tags,
-        imageHostName,
-        imageHostUrl,
-        featuredimage {
+        bannerCredit,
+        banner {
           childImageSharp {
             fluid(maxWidth: 700, maxHeight: 300) {
             # fluid(maxWidth: 1200, quality: 90) {

@@ -3,7 +3,7 @@ category: blog
 title: share link preview image
 date: 2020-02-25T05:43:04.464Z
 description: display code snippet on social website
-featuredimage: /img/fb-share-max-height-1-1.1.png
+banner: /img/fb-share-max-height-1-1.1.png
 tags:
   - Code Snippet
   - Front End Development

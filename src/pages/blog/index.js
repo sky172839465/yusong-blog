@@ -54,7 +54,7 @@ export const pageQuery = graphql`
             date(formatString: "YYYY/MM/DD HH:mm:ss")
             description
             tags
-            featuredimage {
+            banner {
               childImageSharp {
                 fluid(maxWidth: 700, maxHeight: 300) {
                   ...GatsbyImageSharpFluid

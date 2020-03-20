@@ -3,9 +3,8 @@ title: JavaScript generate your code snippet
 category: blog
 date: '2019-06-07T01:00:00.000Z'
 description: "透過 JavaScript 產生程式碼片段後，可以有效提升作業的效率與降低出錯的機率 \U0001F916"
-featuredimage: ../../../static/img/javascript-generate-your-code-snippet.jpeg
-imageHostName: Karsten Würth (@karsten.wuerth)
-imageHostUrl: 'https://unsplash.com/@karsten_wuerth'
+banner: ../../../static/img/javascript-generate-your-code-snippet.jpeg
+bannerCredit: Karsten Würth [(@karsten.wuerth)](https://unsplash.com/@karsten_wuerth)
 tags:
   - Code Snippet
   - JavaScript
