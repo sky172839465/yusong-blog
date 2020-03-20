@@ -45,21 +45,21 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/md-pages/blog`,
+        path: `${__dirname}/src/mdx-pages/blog`,
         name: `blog`
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/md-pages/note`,
+        path: `${__dirname}/src/mdx-pages/note`,
         name: `note`
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/md-pages/home`,
+        path: `${__dirname}/src/mdx-pages/home`,
         name: `home`
       }
     },
