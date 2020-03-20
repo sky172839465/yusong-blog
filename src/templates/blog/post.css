@@ -637,6 +637,10 @@ pre tt:after {
   padding-left: 2.8rem;
   overflow: initial;
 }
+code[class="language-text"] {
+  /* break word when over max length on mobile */
+  white-space: pre-wrap;
+}
 /* bulma number will broken */
 article .number {
   all: unset;
