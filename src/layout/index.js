@@ -13,7 +13,6 @@ import styled from 'styled-components'
 import Navbar from './navbar'
 import Footer from './footer'
 import '../styles/bulma/index.scss'
-import './markdown.css'
 
 const Main = styled.main`
   min-height: calc(100vh - 9rem);

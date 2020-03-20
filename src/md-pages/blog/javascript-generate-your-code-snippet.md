@@ -16,12 +16,23 @@ tags:
 
 最近試著用 [JavaScript 寫 LeetCode](https://github.com/sky172839465/leetcode-in-js) ，每解開一個問題預計會產出題目的解答、解答的測試案例、解答的筆記並且將這些檔案的連結寫入專案的描述裡，一共 **1** 個資料夾加上 **5** 個檔案，如下圖所示：
 
-`gist:sky172839465/bc32f877a951152118fd63f936a1d4a4`
+```diff
+  +-- src/
+  |   +-- easy/
++ |       +-- 0001-two-sum/
++ |           +-- index.js
++ |           +-- README.md
++ |       +-- index.js
+  +-- __tests__/
+  |   +-- easy/
++ |       +-- 0001-two-sum.test.js
++ +-- README.md // highlight-line
+```
 
 1. [src/easy/0001-two-sum/index.js](https://github.com/sky172839465/leetcode-in-js/blob/demo/src/easy/0001-two-sum/index.js) 題目的解答
 2. [src/easy/0001-two-sum/README.md](https://github.com/sky172839465/leetcode-in-js/blob/demo/src/easy/0001-two-sum/README.md) 解答的筆記
 3. [src/easy/index.js](https://github.com/sky172839465/leetcode-in-js/blob/demo/src/easy/index.js) 給測試案例使用的解答共同的出口
-4. [**tests**/easy/0001-two-sum.test.js](https://github.com/sky172839465/leetcode-in-js/blob/demo/__tests__/easy/0001-two-sum.test.js) 解答的測試案例，確保解答符合需求
+4. [tests/easy/0001-two-sum.test.js](https://github.com/sky172839465/leetcode-in-js/blob/demo/__tests__/easy/0001-two-sum.test.js) 解答的測試案例，確保解答符合需求
 5. [README.md](https://github.com/sky172839465/leetcode-in-js/blob/demo/README.md) 專案的描述，當有新解答時描述最底下的表格應跟著新增一筆
 
 連結上是**每次**要開始新的一題需要先準備好的檔案內容，真的非常枯燥又繁瑣，有時候還會漏了某個檔案，尤其是加入新的專案描述…這時候就會像面對考試時會突然覺得桌面的髒亂到不馬上整理不行，我也突然產生了一股不想辦法解決這些重複性高的工作不行的使命感…
@@ -41,7 +52,10 @@ tags:
 
 首先試著產生一個 hello world 的文字檔
 
-`gist:sky172839465/abb6bca50b21c7cef3170e80042c74a9`
+```js
+const fs = require('fs')
+fs.writeFileSync('./helloWorld.txt', 'hello world', 'utf8')
+```
 
 ![hellow world](/img/generate-hello-world.gif)
 
@@ -49,7 +63,23 @@ tags:
 
 markdown 的表格欄位如果變多了寫起來很容易少寫或多寫，所以能透過程式自動產生是最理想的 😍
 
-`gist:sky172839465/b3f761ac2a9e87a519f112955c1bd6ff`
+```js
+const fs = require('fs')
+let contents = ''
+for (let i = 1; i <= 9; i++) {
+  let row = []
+  for (let j = 1; j <= 9; j++) {
+    row.push(`${i} x ${j} = ${i * j}`)
+  }
+  contents += `|${row.join('|')}|\n`
+}
+const table =
+`||||||||||
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+${contents}
+`
+fs.writeFileSync('./nine-nine-table.md', table, 'utf8')
+```
 
 ![產生九九乘法表](/img/generate-nine-nine-table.gif)
 
@@ -59,7 +89,33 @@ markdown 的表格欄位如果變多了寫起來很容易少寫或多寫，所�
 2. npm i --save-dev colors inquirer 安裝套件
 3. JavaScript only !
 
-`gist:sky172839465/a4b16de76f83b3338b7411df70130f87`
+```js
+const fs = require('fs')
+const inquirer = require('inquirer')
+const colors = require('colors')
+const NAME_QUIZ = {
+  type: 'input',
+  name: 'name',
+  message: 'Please enter your name',
+}
+const GENDER_QUIZ = {
+  type: 'list',
+  name: 'gender',
+  message: 'Please choose your gender',
+  choices: [ 'Male', 'Female', 'None']
+}
+const getExporterContent = ans =>
+`const ans = ${JSON.stringify(ans, null, 2).replace(/"/g, '\'')}
+export default ans
+`
+const ask = async () => {
+  console.log(colors.bgCyan(' Start '), 'asking question 👇')
+  const ans = await inquirer.prompt([NAME_QUIZ, GENDER_QUIZ])
+  fs.writeFileSync('./ans.js', getExporterContent(ans), 'utf8')
+  console.log(colors.bgCyan(' END '), 'Thanks for your replied 👆')
+}
+ask()
+```
 
 * [colors](https://github.com/Marak/colors.js)：讓執行過程中印在終端機上的 console.log 加上不同色彩
 * [Inquirer](https://github.com/SBoudrias/Inquirer.js/)：可以寫入問題讓使用者填寫、選擇答案、驗證回答、修改內容…etc

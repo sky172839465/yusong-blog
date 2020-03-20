@@ -624,3 +624,20 @@ pre tt:after {
     font-size: 100%;
   }
 }
+/* gatsby-remark-prismjs line-number */
+.gatsby-highlight {
+  background-color: #1d1f21;
+  border-radius: 0.3rem;
+  margin: .5rem 0;
+  padding: .5rem;
+  overflow: auto;
+}
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: 0;
+  padding-left: 2.8rem;
+  overflow: initial;
+}
+/* bulma number will broken */
+article .number {
+  all: unset;
+}

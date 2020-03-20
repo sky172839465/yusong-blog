@@ -10,6 +10,7 @@ import SEO from '../../components/seo'
 import Title from '../../components/title'
 import FullWidthArea from '../../components/fullWidthArea'
 import ImageCaption from '../../components/imageCaption'
+import './post.css'
 
 const TagsArea = styled.div`
   span {
@@ -37,43 +38,45 @@ const BlogPost = (props) => {
         image={banner && banner.childImageSharp.fluid.src}
         type='article'
       />
-      <FullWidthArea>
-        <div
-          className={clx(
-            'title',
-            'has-text-centered',
-            'has-text-dark'
-          )}
-        >
-          <Title>{title}</Title>
-        </div>
-        {
-          fluid && (
-            <>
-              <Img fluid={fluid} />
-              {
-                bannerCredit &&
-                <ImageCaption>
-                  <Markdown linkTarget='_blank'>{bannerCredit}</Markdown>
-                </ImageCaption>
-              }
-            </>
-          )
-        }
-        <br />
-      </FullWidthArea>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-      <TagsArea className='tags'>
-        {
-          tags.map(tag => (
-            <Link key={tag} to={`/blog/tags/${tag}`}>
-              <span className='tag is-light'>
-                {tag}
-              </span>
-            </Link>
-          ))
-        }
-      </TagsArea>
+      <article className='md-post'>
+        <FullWidthArea>
+          <div
+            className={clx(
+              'title',
+              'has-text-centered',
+              'has-text-dark'
+            )}
+          >
+            <Title>{title}</Title>
+          </div>
+          {
+            fluid && (
+              <>
+                <Img fluid={fluid} />
+                {
+                  bannerCredit &&
+                  <ImageCaption>
+                    <Markdown linkTarget='_blank'>{bannerCredit}</Markdown>
+                  </ImageCaption>
+                }
+              </>
+            )
+          }
+          <br />
+        </FullWidthArea>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <TagsArea className='tags'>
+          {
+            tags.map(tag => (
+              <Link key={tag} to={`/blog/tags/${tag}`}>
+                <span className='tag is-light'>
+                  {tag}
+                </span>
+              </Link>
+            ))
+          }
+        </TagsArea>
+      </article>
     </>
   )
 }
