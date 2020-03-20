@@ -62,13 +62,6 @@ module.exports = {
         name: `home`
       }
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/static/img/`,
-        name: `media`
-      }
-    },
     netlifyCmsPaths,
     {
       resolve: `gatsby-transformer-remark`,
@@ -117,7 +110,6 @@ module.exports = {
             }
           },
           `gatsby-remark-responsive-iframe`
-          // `gatsby-remark-copy-linked-files`
         ]
       }
     },
