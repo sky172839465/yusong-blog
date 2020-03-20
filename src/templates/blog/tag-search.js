@@ -10,7 +10,7 @@ const Title = styled.h1`
 `
 
 const BlogPost = (props) => {
-  const { edges } = props.data.allMarkdownRemark
+  const { edges } = props.data.allMdx
   const { tag } = props.pageContext
   const description = `Tagged "${tag}" posts`
   return (
@@ -40,7 +40,7 @@ export default BlogPost
 
 export const pageQuery = graphql`
   query($searchTagName: String) {
-    allMarkdownRemark(
+    allMdx(
       filter: {
         frontmatter: {
           tags: {

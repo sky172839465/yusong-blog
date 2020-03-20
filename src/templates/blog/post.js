@@ -4,6 +4,7 @@ import clx from 'classnames'
 import styled from 'styled-components'
 import { graphql, Link } from 'gatsby'
 // import { remarkForm } from 'gatsby-tinacms-remark'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import Markdown from 'react-markdown'
 import Img from 'gatsby-image'
 import SEO from '../../components/seo'
@@ -19,8 +20,8 @@ const TagsArea = styled.div`
 `
 
 const BlogPost = (props) => {
-  const { markdownRemark } = props.data
-  const { frontmatter, html } = markdownRemark
+  const { mdx } = props.data
+  const { frontmatter } = mdx
   const {
     title,
     description,
@@ -64,7 +65,7 @@ const BlogPost = (props) => {
           }
           <br />
         </FullWidthArea>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <MDXRenderer>{mdx.body}</MDXRenderer>
         <TagsArea className='tags'>
           {
             tags.map(tag => (
@@ -86,9 +87,9 @@ export default BlogPost
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
-      html
+      body
       frontmatter {
         date,
         title,

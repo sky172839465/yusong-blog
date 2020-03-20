@@ -5,7 +5,7 @@ import PreviewCard from '../../components/previewCard'
 const LastestPosts = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(
+      allMdx(
         filter: {
           frontmatter: {
             category: {
@@ -39,7 +39,7 @@ const LastestPosts = () => {
   `)
   return (
     <>
-      {data.allMarkdownRemark.edges.map(edge => {
+      {data.allMdx.edges.map(edge => {
         return (
           <div key={edge.node.id} className='column'>
             <PreviewCard edge={edge} />

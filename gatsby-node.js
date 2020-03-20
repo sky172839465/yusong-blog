@@ -14,7 +14,7 @@ exports.createPages = async ({ actions, graphql }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === 'MarkdownRemark') {
+  if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: 'slug',
@@ -29,7 +29,7 @@ const generateBlogPostPage = async (actions, graphql) => {
   const blogPostTemplate = path.resolve(`src/templates/blog/post.js`)
   const result = await graphql(`
     {
-      allMarkdownRemark(
+      allMdx(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
@@ -52,7 +52,7 @@ const generateBlogPostPage = async (actions, graphql) => {
     throw result.errors
   }
 
-  const { edges } = result.data.allMarkdownRemark
+  const { edges } = result.data.allMdx
   for (const edge of edges) {
     const {
       node: {
@@ -85,7 +85,7 @@ const generateBlogTagSearchPage = async (actions, graphql) => {
   const tagSearchTemplate = path.resolve(`src/templates/blog/tag-search.js`)
   const result = await graphql(`
     query {
-      allMarkdownRemark(
+      allMdx(
         filter: {
           frontmatter: {
             category: {
@@ -110,7 +110,7 @@ const generateBlogTagSearchPage = async (actions, graphql) => {
     throw result.errors
   }
 
-  const { edges } = result.data.allMarkdownRemark
+  const { edges } = result.data.allMdx
   let totalTags = []
   for (const edge of edges) {
     const { tags } = edge.node.frontmatter

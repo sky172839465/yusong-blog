@@ -4,7 +4,7 @@ import SEO from '../../components/seo'
 import PreviewCard from '../../components/previewCard'
 
 const NotePage = props => {
-  const { edges } = props.data.allMarkdownRemark
+  const { edges } = props.data.allMdx
   return (
     <>
       <SEO
@@ -29,7 +29,7 @@ export default NotePage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
+    allMdx(
       filter: {
         frontmatter: {
           category: {

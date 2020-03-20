@@ -1,3 +1,4 @@
+const path = require('path')
 const _ = require('lodash')
 const { META_KEY, DEFAULT_META } = require('./src/constants/defaultMeta')
 
@@ -64,9 +65,12 @@ module.exports = {
     },
     netlifyCmsPaths,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        defaultLayouts: {
+          default: path.join(__dirname, './src/templates/post.js')
+        },
+        gatsbyRemarkPlugins: [
           netlifyCmsPaths,
           {
             resolve: `gatsby-remark-relative-images`,
@@ -122,19 +126,19 @@ module.exports = {
         component: require.resolve(`./src/layout/index.js`)
       }
     },
-    {
-      resolve: `gatsby-plugin-tinacms`,
-      options: {
-        plugins: [
-          `gatsby-tinacms-git`,
-          `gatsby-tinacms-remark`
-        ],
-        sidebar: {
-          position: `displace`,
-          hidden: process.env.NODE_ENV === `production`
-        }
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-tinacms`,
+    //   options: {
+    //     plugins: [
+    //       `gatsby-tinacms-git`,
+    //       `gatsby-tinacms-remark`
+    //     ],
+    //     sidebar: {
+    //       position: `displace`,
+    //       hidden: process.env.NODE_ENV === `production`
+    //     }
+    //   }
+    // },
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {

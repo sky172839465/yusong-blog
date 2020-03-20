@@ -16,7 +16,7 @@ const TagsArea = styled.div`
 `
 
 const TagsPage = props => {
-  const { edges } = props.data.allMarkdownRemark
+  const { edges } = props.data.allMdx
   let totalTags = []
   for (const edge of edges) {
     const { tags } = edge.node.frontmatter
@@ -54,7 +54,7 @@ export default TagsPage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
+    allMdx(
       filter: {
         frontmatter: {
           category: {

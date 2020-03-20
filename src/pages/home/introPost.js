@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import FullWidthArea from '../../components/fullWidthArea'
 
 const IntroArea = styled.div`
@@ -11,7 +12,7 @@ const IntroArea = styled.div`
 const IntroPost = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(
+      allMdx(
         filter: {
           frontmatter: {
             category: {
@@ -26,7 +27,7 @@ const IntroPost = () => {
       ) {
         edges {
           node {
-            html
+            body
           }
         }
       }
@@ -34,7 +35,9 @@ const IntroPost = () => {
   `)
   return (
     <FullWidthArea className='has-background-light'>
-      <IntroArea dangerouslySetInnerHTML={{ __html: data.allMarkdownRemark.edges[0].node.html }} />
+      <IntroArea>
+        <MDXRenderer>{data.allMdx.edges[0].node.body}</MDXRenderer>
+      </IntroArea>
     </FullWidthArea>
   )
 }
