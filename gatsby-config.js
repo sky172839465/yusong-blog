@@ -116,8 +116,8 @@ module.exports = {
               aliases: {}
             }
           },
-          `gatsby-remark-responsive-iframe`,
-          `gatsby-remark-copy-linked-files`
+          `gatsby-remark-responsive-iframe`
+          // `gatsby-remark-copy-linked-files`
         ]
       }
     },

@@ -3,8 +3,8 @@ title: JavaScript generate your code snippet
 category: blog
 date: '2019-06-07T01:00:00.000Z'
 description: "透過 JavaScript 產生程式碼片段後，可以有效提升作業的效率與降低出錯的機率 \U0001F916"
-banner: ../../../static/img/javascript-generate-your-code-snippet.jpeg
-bannerCredit: Karsten Würth [(@karsten.wuerth)](https://unsplash.com/@karsten_wuerth)
+banner: './images/banner.jpeg'
+bannerCredit: Photo by [Karsten Würth](https://unsplash.com/@karsten_wuerth) on [Unsplash](https://unsplash.com/)
 tags:
   - Code Snippet
   - JavaScript
@@ -57,7 +57,7 @@ const fs = require('fs')
 fs.writeFileSync('./helloWorld.txt', 'hello world', 'utf8')
 ```
 
-![hellow world](/img/generate-hello-world.gif)
+![hellow world](./images/generate-hello-world.gif)
 
 再來把前面提過九九乘法表在 markdown 上實作一次吧！
 
@@ -81,7 +81,7 @@ ${contents}
 fs.writeFileSync('./nine-nine-table.md', table, 'utf8')
 ```
 
-![產生九九乘法表](/img/generate-nine-nine-table.gif)
+![產生九九乘法表](./images/generate-nine-nine-table.gif)
 
 最後加入一些套件，玩點有趣的花式操作 🌈，執行後詢問使用者問題並將回覆結果做成 JavaScript Object 的格式寫入檔案 ans.js
 
@@ -120,7 +120,7 @@ ask()
 * [colors](https://github.com/Marak/colors.js)：讓執行過程中印在終端機上的 console.log 加上不同色彩
 * [Inquirer](https://github.com/SBoudrias/Inquirer.js/)：可以寫入問題讓使用者填寫、選擇答案、驗證回答、修改內容…etc
 
-![將提問的回答寫入檔案並宣告成 JavaScript Object](/img/generate-complex-file.gif)
+![將提問的回答寫入檔案並宣告成 JavaScript Object](./images/generate-complex-file.gif)
 
 ## 化繁為簡後 ✨
 
