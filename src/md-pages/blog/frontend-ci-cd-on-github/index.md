@@ -17,17 +17,11 @@ tags:
 👇 接下來要透過下面幾個步驟實現持續整合與部署的工作 👇
 
 * Lint test (程式碼風格測試) : [StandardJS](https://standardjs.com/)
-
 * Unit test (單元測試) : [Jest](https://jestjs.io/), [Enzyme](https://airbnb.io/enzyme/docs/guides/jest.html)
-
 * Functional test (功能測試) : [Codeceptjs](https://codecept.io/), [WebDriverIO](https://codecept.io/helpers/WebDriverIO/)
-
 * Visual test (視覺測試) : [Applitools](https://applitools.com/)
-
 * Compatibility test (兼容性測試) : [Sauce Labs](https://saucelabs.com/)
-
 * Deploy (部署) : [GitHub Pages](https://pages.github.com/)
-
 * Continuous integration (持續整合) : [Travis CI](https://travis-ci.org/)
 
 ## 環境設定
@@ -35,7 +29,6 @@ tags:
 請先確認環境中已安裝
 
 1. [Git](https://git-scm.com/downloads)
-
 1. [Node.js](https://nodejs.org/en/)
 
 ## **從範例開始**
@@ -346,11 +339,8 @@ $ npm run install:selenium
     ```
 
 1. local.config.js : 在本機的 [codeceptjs](https://codecept.io/configuration/) 的設定
-
 1. commonData.js : 放共用的變數
-
 1. steps_file.js : functional test 中使用的語意 API ， I.xxx 擴充功能可以在這邊新增
-
 1. eyesHelper : 視覺測試 [Applitools](https://applitools.com/tutorials/webdriverio.html#run-your-first-test) 的設定，執行 functional test 時如果想將當時的結果截圖下來交給 Applitools 作比較只要用已經改寫成語意API的 I.screenShotForVisualTest() 即可將圖片截下來上傳到 Applitools 的雲端做比較
 
 👋 因為 Applitools 是一個服務，所以需要先到 [Applitools](https://applitools.com/users/register) 註冊一個帳號取得 EYES_TOKEN 才能上傳到自己的帳號內做比對，建議直接用 GitHub 帳號註冊並登入
@@ -400,7 +390,6 @@ Sauce Labs 是一個雲端服務，提供我們各種作業系統、版本、瀏
 這時會遇到2種狀況 ：
 
 1. 本機開發時網站在 localhost 就可能需要檢驗網站有沒有正確在各種平台執行
-
 1. 部署到線上後要測試線上的網站有沒有跟本機一樣正常
 
 首先我們先在本機進行測試，需要先到 [Sauce Labs](https://saucelabs.com/oauth/login/github) 註冊一個帳號，並同意 Sauce Labs 存取帳號權限
