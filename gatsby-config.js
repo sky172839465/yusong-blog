@@ -109,7 +109,8 @@ module.exports = {
               aliases: {}
             }
           },
-          `gatsby-remark-responsive-iframe`
+          `gatsby-remark-responsive-iframe`,
+          `gatsby-remark-copy-linked-files`
         ]
       }
     },
