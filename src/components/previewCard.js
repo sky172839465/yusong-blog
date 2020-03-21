@@ -24,7 +24,9 @@ const PreviewCard = ({ edge }) => {
   const pagePath = getPagePathFromEdge(edge)
   const fluid = banner
     ? banner.childImageSharp.fluid
-    : imageInShareLink.childImageSharp.fluid
+    : imageInShareLink
+      ? imageInShareLink.childImageSharp.fluid
+      : ''
   return (
     <Card className='card'>
       {fluid && <Img fluid={fluid} />}
