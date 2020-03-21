@@ -26,7 +26,7 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
 
   // generate share link image
   if (node.frontmatter) {
-    generateShareImageByCategory(node)
+    await generateShareImageByCategory(node)
   }
 }
 

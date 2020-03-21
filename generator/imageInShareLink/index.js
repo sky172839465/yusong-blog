@@ -1,5 +1,4 @@
 const fs = require('fs')
-const path = require('path')
 const inlineCss = require('inline-css')
 const nodeHtmlToImage = require('node-html-to-image')
 
@@ -11,14 +10,18 @@ const generateShareImage = async (imageInfo) => {
     websiteUrl,
     category
   } = imageInfo
+  const imagesFolder = `${targetFolder}/images`
   try {
-    const html = await fs.readFileSync(`${templateFolder}/index.html`, 'utf8')
+    const html = fs.readFileSync(`${templateFolder}/index.html`, 'utf8')
     const htmlWithInlineCss = await inlineCss(html, {
       url: `file://${templateFolder}/`
     })
     // console.log(htmlWithInlineCss)
+    if (!fs.existsSync(imagesFolder)) {
+      fs.mkdirSync(imagesFolder)
+    }
     await nodeHtmlToImage({
-      output: path.join(targetFolder, '/images/shareLinkImage.jpg'),
+      output: `${imagesFolder}/shareLinkImage.jpg`,
       html: htmlWithInlineCss,
       content: {
         title,
