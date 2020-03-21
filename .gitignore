@@ -58,6 +58,9 @@ typings/
 .cache/
 public
 
+# image in share link
+src/mdx-pages/**/shareLinkImage.jpg*
+
 # Mac files
 .DS_Store
 

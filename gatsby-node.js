@@ -1,6 +1,7 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const _ = require('lodash')
+const generateShareImage = require('./generator/imageInShareLink')
 
 exports.createPages = async ({ actions, graphql }) => {
   await generateBlogPostPage(actions, graphql)
@@ -11,7 +12,7 @@ exports.createPages = async ({ actions, graphql }) => {
  * generate slug
  * https://www.gatsbyjs.org/docs/creating-slugs-for-pages/
  */
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = async ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === 'Mdx') {
@@ -21,6 +22,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value
     })
+  }
+
+  // generate share link image
+  if (node.frontmatter) {
+    generateShareImageByCategory(node)
   }
 }
 
@@ -35,6 +41,7 @@ const generateBlogPostPage = async (actions, graphql) => {
       ) {
         edges {
           node {
+            fileAbsolutePath
             fields {
               slug
             }
@@ -126,5 +133,33 @@ const generateBlogTagSearchPage = async (actions, graphql) => {
         searchTagName: `/${tag}/`
       }
     })
+  }
+}
+
+const generateShareImageByCategory = async (node) => {
+  switch (node.frontmatter.category) {
+    case 'blog':
+    case 'note': {
+      const {
+        fileAbsolutePath,
+        frontmatter: { category, title }
+      } = node
+      const templateFolder = path.join(__dirname, './template/blog/post')
+      const imageInfo = {
+        targetFolder: path.parse(fileAbsolutePath).dir,
+        templateFolder,
+        title,
+        websiteUrl: '🔗 YUSONG.IO'
+      }
+      if (category === 'blog') {
+        imageInfo.category = '📓 BLOG'
+      } else if (category === 'note') {
+        imageInfo.category = '📓 NOTE'
+      }
+      await generateShareImage(imageInfo)
+      break
+    }
+    default:
+      break
   }
 }

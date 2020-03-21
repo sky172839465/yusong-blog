@@ -27,6 +27,7 @@ const BlogPost = (props) => {
     description,
     banner,
     bannerCredit,
+    imageInShareLink,
     tags
   } = frontmatter
   const { fluid } = _.get(banner, 'childImageSharp', {})
@@ -36,7 +37,7 @@ const BlogPost = (props) => {
         title={title}
         description={description}
         path={props.path}
-        image={banner && banner.childImageSharp.fluid.src}
+        image={imageInShareLink.childImageSharp.fluid.src}
         type='article'
       />
       <article className='md-post'>
@@ -101,6 +102,13 @@ export const pageQuery = graphql`
             fluid(maxWidth: 700, maxHeight: 300) {
             # fluid(maxWidth: 1200, quality: 90) {
               # aspectRatio
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        imageInShareLink {
+          childImageSharp {
+            fluid(maxWidth: 1200, maxHeight: 630) {
               ...GatsbyImageSharpFluid
             }
           }
