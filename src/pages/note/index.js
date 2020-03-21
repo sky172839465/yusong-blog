@@ -53,6 +53,13 @@ export const pageQuery = graphql`
             title
             date(formatString: "YYYY/MM/DD HH:mm:ss")
             tags
+            imageInShareLink {
+              childImageSharp {
+                fluid(maxWidth: 1200, maxHeight: 630) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
