@@ -31,7 +31,7 @@ body {
   display: inline-block;
   width: calc(1200px / var(--scale-size));
   height: calc(630px / var(--scale-size));
-  padding: 1rem;
+  padding: 3rem;
   background-color: #fff;
 }
 
@@ -77,7 +77,7 @@ body {
 
 .divide-area {
   position: absolute;
-  bottom: 8rem;
+  bottom: 6rem;
   width: 100%;
 }
 
