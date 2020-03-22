@@ -5,7 +5,10 @@ cache:
   directories:
     - node_modules
 before_install:
+  # 安裝中文字型支援 screenshot 中文
   - sudo apt-get install -y language-pack-zh-hant fonts-wqy-microhei ttf-wqy-microhei fonts-wqy-zenhei ttf-wqy-zenhei
+  # 安裝 emoji 字型支援
+  - sudo apt-get install fonts-noto-color-emoji
 install:
   - npm install
 script:
