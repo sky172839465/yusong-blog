@@ -18,5 +18,3 @@ script:
   - npm run ci-lint
   - npm run build
   - npm run ci-deploy
-true:
-  branch: master
