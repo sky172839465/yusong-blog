@@ -17,7 +17,7 @@
 [netlify-image]: https://api.netlify.com/api/v1/badges/60b3ae1e-8068-4a92-acdd-8a048816c900/deploy-status
 [netlify-url]: https://app.netlify.com/sites/yusong-io/deploys
 [travis-image]: https://img.shields.io/travis/sky172839465/yusong.io.svg?branch=master
-[travis-url]: https://travis-ci.org/sky172839465/yusong.io
+[travis-url]: https://travis-ci.com/sky172839465/yusong.io
 
 ---
 
