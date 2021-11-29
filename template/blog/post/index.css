@@ -65,12 +65,12 @@ body {
 
 .website {
   position: absolute;
-  left: 1rem;
-  bottom: 1rem;
+  left: 2rem;
+  bottom: 2rem;
 }
 
 .category {
   position: absolute;
-  right: 1rem;
-  bottom: 1rem;
+  right: 2rem;
+  bottom: 2rem;
 }

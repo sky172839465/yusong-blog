@@ -152,9 +152,9 @@ const generateShareImageByCategory = async (node) => {
         websiteUrl: 'YUSONG.IO'
       }
       if (category === 'blog') {
-        imageInfo.category = '📓 BLOG'
+        imageInfo.category = 'BLOG'
       } else if (category === 'note') {
-        imageInfo.category = '📓 NOTE'
+        imageInfo.category = 'NOTE'
       }
       await generateShareImage(imageInfo)
       break
