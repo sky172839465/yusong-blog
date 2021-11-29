@@ -11,6 +11,7 @@ backend:
     uploadMedia: "docs({{collection}}): upload '{{path}}' by NetlifyCMS 🤖"
     deleteMedia: "docs({{collection}}): delete '{{path}}' by NetlifyCMS 🤖"
 media_folder: static/img
+public_folder: static/img
 collections:
   - name: "home"
     label: "Home"
