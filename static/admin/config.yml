@@ -18,7 +18,7 @@ collections:
   - name: "home"
     label: "Home"
     folder: "src/mdx-pages/home"
-    path: "{{slug}}/index.mdx"
+    path: "{{slug}}/index"
     create: true
     slug: "{{slug}}"
     extension: "mdx"
@@ -31,7 +31,7 @@ collections:
   - name: "blog"
     label: "Blog"
     folder: "src/mdx-pages/blog"
-    path: "{{slug}}/index.mdx"
+    path: "{{slug}}/index"
     create: true
     slug: "{{slug}}"
     extension: "mdx"
@@ -47,7 +47,7 @@ collections:
   - name: "note"
     label: "Note"
     folder: "src/mdx-pages/note"
-    path: "{{slug}}/index.mdx"
+    path: "{{slug}}/index"
     create: true
     slug: "{{slug}}"
     extension: "mdx"
@@ -62,7 +62,7 @@ collections:
   - name: "about"
     label: "About"
     folder: "src/mdx-pages/about"
-    path: "{{slug}}/index.mdx"
+    path: "{{slug}}/index"
     create: true
     slug: "{{slug}}"
     extension: "mdx"
