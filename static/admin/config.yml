@@ -15,39 +15,61 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "home"
+    label: "Home"
+    folder: "src/mdx-pages/home"
+    path: "{{slug}}/index.mdx"
+    create: true
+    slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "hidden", default: "about"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "mdx"}
   - name: "blog"
     label: "Blog"
     folder: "src/mdx-pages/blog"
+    path: "{{slug}}/index.mdx"
     create: true
     slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
     fields:
       - {label: "Category", name: "category", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Image", name: "banner", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Body", name: "body", widget: "mdx"}
   - name: "note"
     label: "Note"
     folder: "src/mdx-pages/note"
+    path: "{{slug}}/index.mdx"
     create: true
     slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
     fields:
       - {label: "Category", name: "category", widget: "hidden", default: "note"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Body", name: "body", widget: "mdx"}
   - name: "about"
     label: "About"
     folder: "src/mdx-pages/about"
+    path: "{{slug}}/index.mdx"
     create: true
     slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
     fields:
       - {label: "Category", name: "category", widget: "hidden", default: "about"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "mdx"}
       - {label: "Activity", name: "activity", widget: "boolean", default: true}
