@@ -5,15 +5,12 @@ backend:
   branch: master
   squash_merges: true
   commit_messages:
-    create: "feat: create {{collection}} '{{slug}}' by NetlifyCMS 🤖"
-    update: "feat: update {{collection}} '{{slug}}' by NetlifyCMS 🤖"
-    delete: "feat: delete {{collection}} '{{slug}}' by NetlifyCMS 🤖"
-    uploadMedia: "feat: upload '{{path}}' by NetlifyCMS 🤖"
-    deleteMedia: "feat: delete '{{path}}' by NetlifyCMS 🤖"
-
+    create: "docs({{collection}}): create '{{slug}}' by NetlifyCMS 🤖"
+    update: "docs({{collection}}): update '{{slug}}' by NetlifyCMS 🤖"
+    delete: "docs({{collection}}): delete '{{slug}}' by NetlifyCMS 🤖"
+    uploadMedia: "docs({{collection}}): upload '{{path}}' by NetlifyCMS 🤖"
+    deleteMedia: "docs({{collection}}): delete '{{path}}' by NetlifyCMS 🤖"
 media_folder: static/img
-public_folder: /img
-
 collections:
   - name: "home"
     label: "Home"
