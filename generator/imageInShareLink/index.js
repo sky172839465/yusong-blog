@@ -20,8 +20,12 @@ const generateShareImage = async (imageInfo) => {
     if (!fs.existsSync(imagesFolder)) {
       fs.mkdirSync(imagesFolder)
     }
+    const pathToFile = `${imagesFolder}/shareLinkImage.jpg`
+    if (fs.existsSync(pathToFile)) {
+      return
+    }
     await nodeHtmlToImage({
-      output: `${imagesFolder}/shareLinkImage.jpg`,
+      output: pathToFile,
       html: htmlWithInlineCss,
       content: {
         title,
