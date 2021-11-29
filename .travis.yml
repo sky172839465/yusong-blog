@@ -13,7 +13,7 @@ before_install:
   # update font cache
   - sudo fc-cache -f -v
 install:
-  - npm install
+  - npm install --legacy-peer-deps
 script:
   - npm run ci-lint
   - npm run build
