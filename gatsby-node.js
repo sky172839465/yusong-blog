@@ -149,7 +149,7 @@ const generateShareImageByCategory = async (node) => {
         targetFolder: path.parse(fileAbsolutePath).dir,
         templateFolder,
         title,
-        websiteUrl: '🔗 YUSONG.IO'
+        websiteUrl: 'YUSONG.IO'
       }
       if (category === 'blog') {
         imageInfo.category = '📓 BLOG'
