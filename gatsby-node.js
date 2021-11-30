@@ -96,7 +96,7 @@ const generateBlogTagSearchPage = async (actions, graphql) => {
         filter: {
           frontmatter: {
             category: {
-              eq: "blog"
+              in: ["blog", "note", "about"]
             }
           }
         }
@@ -126,7 +126,7 @@ const generateBlogTagSearchPage = async (actions, graphql) => {
   totalTags = _.uniq(totalTags)
   for (const tag of totalTags) {
     createPage({
-      path: `/blog/tags/${tag}`,
+      path: `/tags/${tag}`,
       component: tagSearchTemplate,
       context: {
         tag,

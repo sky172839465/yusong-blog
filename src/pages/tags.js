@@ -3,9 +3,9 @@ import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import _ from 'lodash'
 import { FaTags } from 'react-icons/fa'
-import SEO from '../../components/seo'
-import Title from '../../components/title'
-import Icon from '../../components/icon'
+import SEO from '../components/seo'
+import Title from '../components/title'
+import Icon from '../components/icon'
 
 const title = 'Tags'
 
@@ -37,7 +37,7 @@ const TagsPage = props => {
         {
           totalTags.map(tag => {
             return (
-              <Link key={tag} to={`/blog/tags/${tag}`}>
+              <Link key={tag} to={`/tags/${tag}`}>
                 <span className='tag is-large is-light'>
                   {tag}
                 </span>

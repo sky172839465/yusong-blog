@@ -70,7 +70,7 @@ const BlogPost = (props) => {
         <TagsArea className='tags'>
           {
             tags.map(tag => (
-              <Link key={tag} to={`/blog/tags/${tag}`}>
+              <Link key={tag} to={`/tags/${tag}`}>
                 <span className='tag is-light'>
                   {tag}
                 </span>
